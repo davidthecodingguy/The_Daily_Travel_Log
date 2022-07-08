@@ -13,7 +13,6 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
             Thread.Sleep(2000);
             Console.WriteLine("Please select an option:");
-            Console.WriteLine();
         }
     }
 }
