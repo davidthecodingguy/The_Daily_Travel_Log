@@ -12,7 +12,8 @@ namespace The_Daily_Travel_Log
             Console.WriteLine("Welcome to The Daily Travel Log!");
             Console.WriteLine();
             Thread.Sleep(2000);
-            Console.WriteLine("Please select an option:");
+            Console.WriteLine("Please type the corresponding number to select an option:");
+            Console.WriteLine("1. Log Location");
         }
     }
 }
