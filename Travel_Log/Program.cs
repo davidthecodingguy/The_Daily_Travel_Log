@@ -13,7 +13,12 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
             Thread.Sleep(2000);
             Console.WriteLine("Please type the corresponding number to select an option:");
-            Console.WriteLine("1. Log Location");
+            Thread.Sleep(1000);
+            Console.WriteLine("1: Log Location");
+            Thread.Sleep(1000);
+            Console.WriteLine("2: See Previous Locations");
+            Thread.Sleep(1000);
+            Console.WriteLine("3: Exit");
         }
     }
 }
