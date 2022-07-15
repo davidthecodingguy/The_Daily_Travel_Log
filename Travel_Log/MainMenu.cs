@@ -20,7 +20,7 @@ namespace The_Daily_Travel_Log
 
             Console.WriteLine();
             string menuoption = Console.ReadLine();
-            if (menuoption == "1")
+            if (menuoption == "1" || menuoption == "1." || menuoption == "1:")
             {
                 {
                     //this menu option has not implemented yet
@@ -30,13 +30,15 @@ namespace The_Daily_Travel_Log
                     MainMenu.Menu();
                 }
             }
-            else if (menuoption == "2")
+            else if (menuoption == "2" || menuoption == "2." || menuoption == "2:")
             {
-                //this menu option has not been implemented yet
-                Console.WriteLine("This feature is still under development!");
-                Thread.Sleep(1000);
-                Console.WriteLine();
-                MainMenu.Menu();
+                { 
+                    //this menu option has not been implemented yet
+                    Console.WriteLine("This feature is still under development!");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                    MainMenu.Menu();
+                }
             }
         }
     }
