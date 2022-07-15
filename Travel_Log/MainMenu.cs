@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Threading;
+
 namespace The_Daily_Travel_Log
 {
     public class MainMenu
@@ -13,9 +14,30 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(1000);
             Console.WriteLine("2: See Previous Locations");
             Thread.Sleep(1000);
-            Console.WriteLine("3. Return to Menu");
+            Console.WriteLine("3: Return to Menu");
             Thread.Sleep(1000);
             Console.WriteLine("4: Quit");
+
+            Console.WriteLine();
+            string menuoption = Console.ReadLine();
+            if (menuoption == "1")
+            {
+                {
+                    //this menu option has not implemented yet
+                    Console.WriteLine("This feature is still under development!");
+                    Thread.Sleep(1000);
+                    Console.WriteLine();
+                    MainMenu.Menu();
+                }
+            }
+            else if (menuoption == "2")
+            {
+                //this menu option has not been implemented yet
+                Console.WriteLine("This feature is still under development!");
+                Thread.Sleep(1000);
+                Console.WriteLine();
+                MainMenu.Menu();
+            }
         }
     }
 }
