@@ -18,7 +18,11 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(1000);
             Console.WriteLine("2: See Previous Locations");
             Thread.Sleep(1000);
-            Console.WriteLine("3: Quit");
+            Console.WriteLine("3. Return to Menu");
+            Thread.Sleep(1000);
+            Console.WriteLine("4: Quit");
+
+              
         }
     }
 }
