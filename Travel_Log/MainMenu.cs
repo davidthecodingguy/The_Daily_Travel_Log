@@ -16,7 +16,9 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("3: Return to Menu");
             Thread.Sleep(500);
-            Console.WriteLine("4: Quit");
+            Console.WriteLine("4: Clear Screen");
+            Thread.Sleep(500);
+            Console.WriteLine("5: Quit");
 
             Console.WriteLine();
             string menuoption = Console.ReadLine();
@@ -37,10 +39,16 @@ namespace The_Daily_Travel_Log
                 MainMenu.Menu();
             }
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
-            { 
+            {
                 MainMenu.Menu();
             }
             else if (menuoption == "4" || menuoption == "4." || menuoption == "4:" || menuoption == "4)" || menuoption == "4 " || menuoption == "4. " || menuoption == "4: " || menuoption == "4) ")
+            {
+                Console.Clear();
+                Console.WriteLine("Screen cleared!");
+                MainMenu.Menu();
+            }
+            else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
             {
                 Console.WriteLine("Until next time!");
                 Thread.Sleep(1500);
@@ -50,6 +58,7 @@ namespace The_Daily_Travel_Log
             {
                 Console.WriteLine("Input not recognized, please try again!");
                 Thread.Sleep(500);
+                Console.WriteLine();
                 MainMenu.Menu();
             }
         }
