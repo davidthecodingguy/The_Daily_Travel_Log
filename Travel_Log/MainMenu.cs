@@ -40,6 +40,18 @@ namespace The_Daily_Travel_Log
                     MainMenu.Menu();
                 }
             }
+            else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
+            {
+                {
+                    MainMenu.Menu();
+                }
+            }
+            else if (menuoption == "4" || menuoption == "4." || menuoption == "4:" || menuoption == "4)" || menuoption == "4 " || menuoption == "4. " || menuoption == "4: " || menuoption == "4) ")
+            {
+                {
+                    Environment.Exit(0);
+                }
+            }
         }
     }
 }

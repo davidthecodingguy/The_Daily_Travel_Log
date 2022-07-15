@@ -14,7 +14,7 @@ namespace The_Daily_Travel_Log
             Console.WriteLine("The time and date is:");
             Console.WriteLine(DateTime.Now.ToString("HH:mm\nMM/dd/yyyy"));
             Console.WriteLine();
-            Thread.Sleep(2000);
+            Thread.Sleep(1500);
             MainMenu.Menu();
         }
     }
