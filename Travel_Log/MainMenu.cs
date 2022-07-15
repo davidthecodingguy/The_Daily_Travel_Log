@@ -22,35 +22,35 @@ namespace The_Daily_Travel_Log
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
-                {
-                    //this menu option has not implemented yet
-                    Console.WriteLine("This feature is still under development!");
-                    Thread.Sleep(1500);
-                    Console.WriteLine();
-                    MainMenu.Menu();
-                }
+                //this menu option has not implemented yet
+                Console.WriteLine("This feature is still under development!");
+                Thread.Sleep(1500);
+                Console.WriteLine();
+                MainMenu.Menu();
             }
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
-                { 
-                    //this menu option has not been implemented yet
-                    Console.WriteLine("This feature is still under development!");
-                    Thread.Sleep(1500);
-                    Console.WriteLine();
-                    MainMenu.Menu();
-                }
+                //this menu option has not been implemented yet
+                Console.WriteLine("This feature is still under development!");
+                Thread.Sleep(1500);
+                Console.WriteLine();
+                MainMenu.Menu();
             }
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
-            {
-                {
-                    MainMenu.Menu();
-                }
+            { 
+                MainMenu.Menu();
             }
             else if (menuoption == "4" || menuoption == "4." || menuoption == "4:" || menuoption == "4)" || menuoption == "4 " || menuoption == "4. " || menuoption == "4: " || menuoption == "4) ")
             {
-                {
-                    Environment.Exit(0);
-                }
+                Console.WriteLine("Until next time!");
+                Thread.Sleep(1500);
+                Environment.Exit(0);
+            }
+            else
+            {
+                Console.WriteLine("Input not recognized, please try again!");
+                Thread.Sleep(500);
+                MainMenu.Menu();
             }
         }
     }
