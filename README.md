@@ -2,7 +2,8 @@
 This is a simple location-logging console application designed to quickly record the computer's location when prompted by the user. The purpose of this application is mainly recreational and will serve as the basis for a more complex program in the future.
 
 
-Project Features include
+Project Features include:
+a <br />
 #1
 Main menu that allows users to log their location, look at previous locations, and exit the program.
 
