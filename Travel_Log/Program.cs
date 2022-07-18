@@ -9,7 +9,9 @@ namespace The_Daily_Travel_Log
         {
             Console.Title = "Travel Log";
             Console.Clear();
-            Console.WriteLine("Welcome to The Daily Travel Log!");
+            Console.WriteLine("Welcome to");
+            Console.WriteLine();
+            ProgramLogo.WriteLogo();
             Console.WriteLine();
             Console.WriteLine("The time and date is:");
             Console.WriteLine(DateTime.Now.ToString("HH:mm\nMM/dd/yyyy"));
