@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 using System.Linq;
 using System.Threading;
 
@@ -24,11 +25,18 @@ namespace The_Daily_Travel_Log
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
-                //this menu option has not implemented yet
-                Console.WriteLine("This feature is still under development!");
-                Thread.Sleep(1500);
-                Console.WriteLine();
+            
+                 //this menu option is not working because I'm not invoking instances of it maybe?
+                    
+                    
+
+                StreamWriter sw = new StreamWriter("previouslocations.csv", true);
+
+                sw.WriteLine();
+                sw.Flush();
+                sw.Close();
                 MainMenu.Menu();
+             
             }
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
