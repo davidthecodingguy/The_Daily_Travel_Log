@@ -25,16 +25,36 @@ namespace The_Daily_Travel_Log
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
-            
-                 //this menu option is not working because I'm not invoking instances of it maybe?
-                    
-                    
+                string currenttown;
+                string currentstateorprovince;
+                string currentcountry;
+                string currentdate;
 
-                StreamWriter sw = new StreamWriter("previouslocations.csv", true);
+                StreamWriter sw = new StreamWriter("PreviousLocations.csv", true);
 
-                sw.WriteLine();
+                Console.WriteLine("Please input the town you are currently in:");
+                currenttown = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.WriteLine("Please input the state or province you are currently in:");
+                currentstateorprovince = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.WriteLine("Please input the country you are currently in:");
+                currentcountry = Console.ReadLine();
+                Console.WriteLine();
+
+                Console.WriteLine("Please input the current date (format MM/DD/YYYY):");
+                currentdate = Console.ReadLine();
+                Console.WriteLine();
+
+                sw.WriteLine("Town: " + currenttown + " State/Province: " + currentstateorprovince + " Country: " + currentcountry + " Date: " + currentdate);
                 sw.Flush();
                 sw.Close();
+
+                Console.WriteLine("Your location information has been recorded!");
+                Console.WriteLine();
+                Thread.Sleep(1000);
                 MainMenu.Menu();
              
             }
