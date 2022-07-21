@@ -21,3 +21,4 @@ namespace The_Daily_Travel_Log
         }
     }
 }
+//Thanks Mike DeMarco for the DateTime format!

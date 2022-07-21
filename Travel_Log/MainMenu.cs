@@ -60,7 +60,7 @@ namespace The_Daily_Travel_Log
             }
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
-                //this menu option has not been implemented yet
+                //this menu option has not been added yet. need to add LINQ query!!!!!
                 Console.WriteLine("This feature is still under development!");
                 Thread.Sleep(1500);
                 Console.WriteLine();
@@ -92,3 +92,4 @@ namespace The_Daily_Travel_Log
         }
     }
 }
+//Thanks Michael Winter for the StreamWriter help!
