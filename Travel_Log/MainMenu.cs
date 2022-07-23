@@ -1,7 +1,8 @@
 ﻿using System;
 using System.IO;
-using System.Linq;
 using System.Threading;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace The_Daily_Travel_Log
 {
@@ -56,12 +57,33 @@ namespace The_Daily_Travel_Log
                 Console.WriteLine();
                 Thread.Sleep(1000);
                 MainMenu.Menu();
-             
             }
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
-                //this menu option has not been added yet. need to add LINQ query!!!!!
-                Console.WriteLine("This feature is still under development!");
+                /*this menu option has not been added yet. need to add LINQ query. Maybe insert query at beginning
+
+                var query = from line in File.ReadLines("PreviousLocations.csv")
+                            select new
+                            {
+                                PreviousTown = Data[1]
+                            }
+                var ordered = from c in currenttown orderby c.town descending select c;*/
+
+                try
+                {
+                    StreamReader sr = new StreamReader("PreviousLocationsQ.csv"); //reminder to fix file name once StreamWriter error is fixed
+                    Console.WriteLine(sr.ReadToEnd());
+                    sr.Close();
+                }
+                catch
+                {
+                    //currently won't write the text i've passed into sw.WriteLine. Maybe needs local variable like above?
+                    Console.WriteLine("The file could not be found! Please make sure the file PreviousLocations.csv has not been deleted or renamed and try again!");
+                    StreamWriter sw = new StreamWriter("DailyTravelLogErrors.csv", true);
+                    sw.WriteLine("The file PreviousLocations.csv was not found and the information could not be retrieved.");
+                    sw.Close();
+                }
+
                 Thread.Sleep(1500);
                 Console.WriteLine();
                 MainMenu.Menu();
@@ -84,7 +106,17 @@ namespace The_Daily_Travel_Log
             }
             else
             {
+                //have program write invalid menu input to a .csv file
+
+                string invalidinput;
+
+                StreamWriter sw = new StreamWriter("DailyTravelLogErrors.csv", true);
+
+                invalidinput = Console.ReadLine();
+                sw.WriteLine("Invalid Input: " + invalidinput);
                 Console.WriteLine("Input not recognized, please try again!");
+
+
                 Thread.Sleep(500);
                 Console.WriteLine();
                 MainMenu.Menu();
