@@ -26,12 +26,13 @@ namespace The_Daily_Travel_Log
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
+                //Keeps saving files to new csv files. Might need a path?
                 string currenttown;
                 string currentstateorprovince;
                 string currentcountry;
                 string currentdate;
 
-                StreamWriter sw = new StreamWriter("PreviousLocations.csv", true);
+                StreamWriter sw1 = new StreamWriter("PreviousLocations.csv", true);
 
                 Console.WriteLine("Please input the town you are currently in:");
                 currenttown = Console.ReadLine();
@@ -49,9 +50,9 @@ namespace The_Daily_Travel_Log
                 currentdate = Console.ReadLine();
                 Console.WriteLine();
 
-                sw.WriteLine("Town: " + currenttown + " State/Province: " + currentstateorprovince + " Country: " + currentcountry + " Date: " + currentdate);
-                sw.Flush();
-                sw.Close();
+                sw1.WriteLine("Town: " + currenttown + " State/Province: " + currentstateorprovince + " Country: " + currentcountry + " Date: " + currentdate);
+                sw1.Flush();
+                sw1.Close();
 
                 Console.WriteLine("Your location information has been recorded!");
                 Console.WriteLine();
@@ -71,19 +72,17 @@ namespace The_Daily_Travel_Log
 
                 try
                 {
-                    StreamReader sr = new StreamReader("PreviousLocationsQ.csv"); //reminder to fix file name once StreamWriter error is fixed
-                    Console.WriteLine(sr.ReadToEnd());
-                    sr.Close();
+                    StreamReader sr1 = new StreamReader("PreviousLocations.csv"); 
+                    Console.WriteLine(sr1.ReadToEnd());
+                    sr1.Close();
                 }
                 catch
                 {
-                    //currently won't write the text i've passed into sw.WriteLine. Maybe needs local variable like above?
                     Console.WriteLine("The file could not be found! Please make sure the file PreviousLocations.csv has not been deleted or renamed and try again!");
-                    StreamWriter sw = new StreamWriter("DailyTravelLogErrors.csv", true);
-                    sw.WriteLine("The file PreviousLocations.csv was not found and the information could not be retrieved.");
-                    sw.Close();
+                    StreamWriter sw2 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                    sw2.WriteLine("Error: The file PreviousLocations.csv could not be found.");
+                    sw2.Close();
                 }
-
                 Thread.Sleep(1500);
                 Console.WriteLine();
                 MainMenu.Menu();
@@ -106,16 +105,12 @@ namespace The_Daily_Travel_Log
             }
             else
             {
-                //have program write invalid menu input to a .csv file
-
-                string invalidinput;
-
-                StreamWriter sw = new StreamWriter("DailyTravelLogErrors.csv", true);
-
-                invalidinput = Console.ReadLine();
-                sw.WriteLine("Invalid Input: " + invalidinput);
+                //Maybe put in a menu option to see previous errors?
                 Console.WriteLine("Input not recognized, please try again!");
-
+                StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                sw3.WriteLine("User Input Error");
+                sw3.Flush();
+                sw3.Close();
 
                 Thread.Sleep(500);
                 Console.WriteLine();
