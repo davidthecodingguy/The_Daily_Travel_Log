@@ -29,7 +29,7 @@ Possible Project Features
 <br />
 <br />
 #4
-Logs runtime errors and invalid inputs and records them in a text file viewable by the user.
+Logs invalid user inputs and records them in a text file viewable by the user.
 <br />
 Required Feature Addressed: Implement a log that records errors, invalid inputs, or other important events and writes them to a text file.
 <br />
