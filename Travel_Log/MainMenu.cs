@@ -61,7 +61,7 @@ namespace The_Daily_Travel_Log
             }
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
-                /*this menu option has not been added yet. need to add LINQ query. Maybe insert query at beginning
+                /* need to add LINQ query. Maybe insert query at beginning
 
                 var query = from line in File.ReadLines("PreviousLocations.csv")
                             select new
@@ -69,6 +69,7 @@ namespace The_Daily_Travel_Log
                                 PreviousTown = Data[1]
                             }
                 var ordered = from c in currenttown orderby c.town descending select c;*/
+                
 
                 try
                 {
@@ -107,7 +108,6 @@ namespace The_Daily_Travel_Log
             }
             else
             {
-                //Maybe put in a menu option to see previous errors?
                 Console.WriteLine("Input not recognized, please try again!");
                 StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
                 sw3.WriteLine("User Input Error");
