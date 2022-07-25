@@ -10,8 +10,8 @@ namespace The_Daily_Travel_Log
             /*var locations = new string[] { };
 
             var locationQuery =
-                from date in currentdate
-                select date;*/
+                from town in currenttown
+                select town;*/
         }
     }
 }

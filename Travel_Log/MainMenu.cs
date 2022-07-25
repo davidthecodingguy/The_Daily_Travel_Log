@@ -81,7 +81,9 @@ namespace The_Daily_Travel_Log
                     Console.WriteLine("The file could not be found! Please make sure the file PreviousLocations.csv has not been deleted or renamed and try again!");
                     StreamWriter sw2 = new StreamWriter("DailyTravelLogErrors.csv", true);
                     sw2.WriteLine("Error: The file PreviousLocations.csv could not be found.");
+                    sw2.Flush();
                     sw2.Close();
+                    //might need to put in readme that the user will have to search for the file under DailyTravelLogErrors.csv in they wish to view the error log
                 }
                 Thread.Sleep(1500);
                 Console.WriteLine();
