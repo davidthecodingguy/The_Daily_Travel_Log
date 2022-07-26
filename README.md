@@ -15,13 +15,13 @@ Required Feature Addressed: Implement a “master loop” console application wh
 <br />
 <br />
 #2
-*Please not that this feature did not appear on the original Project Plan.* Saves location information as input by the user and retrieves previously logged location information and displays said information to the user when requested via the corresponding menu option.
+Saves location information as input by the user, retrieves previously logged location information, and displays said information to the user when requested via the corresponding menu option.
 <br />
 Required Feature Addressed: Read data from an external file, such as text, JSON, CSV, etc and use that data in your application.
 <br />
 <br />
 #3
-Logs invalid user inputs on the main menu and file not found errors and records them in a text file viewable by the user.
+Saves file not found errors and invalid user input occurances (while in the main menu) and writes them to a text file viewable by the user.
 <br />
 Required Feature Addressed: Implement a log that records errors, invalid inputs, or other important events and writes them to a text file.
 <br />
