@@ -20,13 +20,14 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("4: Clear Screen");
             Thread.Sleep(500);
-            Console.WriteLine("5: Quit");
+            Console.WriteLine("5: View Error Log (For Nerds Only)");
+            Thread.Sleep(500);
+            Console.WriteLine("6: Quit");
 
             Console.WriteLine();
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
-                //would like to log nonsensical inputs
                 string currenttown;
                 string currentstateorprovince;
                 string currentcountry;
@@ -36,7 +37,7 @@ namespace The_Daily_Travel_Log
                 Console.WriteLine();
                 Thread.Sleep(2000);
 
-                StreamWriter sw1 = new StreamWriter("PreviousLocations.csv", true);
+                StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
 
                 Console.WriteLine("Please input the town you are currently in:");
                 currenttown = Console.ReadLine();
@@ -54,9 +55,9 @@ namespace The_Daily_Travel_Log
                 currentdate = Console.ReadLine();
                 Console.WriteLine();
 
-                sw1.WriteLine("Town: " + currenttown + " State/Province: " + currentstateorprovince + " Country: " + currentcountry + " Date: " + currentdate);
-                sw1.Flush();
-                sw1.Close();
+                swriter1.WriteLine("Town: " + currenttown + " State/Province: " + currentstateorprovince + " Country: " + currentcountry + " Date: " + currentdate);
+                swriter1.Flush();
+                swriter1.Close();
 
                 Console.WriteLine("Your location information has been recorded!");
                 Console.WriteLine();
@@ -73,22 +74,20 @@ namespace The_Daily_Travel_Log
                                 PreviousTown = Data[1]
                             }
                 var ordered = from c in currenttown orderby c.town descending select c;*/
-                
 
                 try
                 {
-                    StreamReader sr1 = new StreamReader("PreviousLocations.csv"); 
-                    Console.WriteLine(sr1.ReadToEnd());
-                    sr1.Close();
+                    StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
+                    Console.WriteLine(sreader1.ReadToEnd());
+                    sreader1.Close();
                 }
                 catch
                 {
                     Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
-                    StreamWriter sw2 = new StreamWriter("DailyTravelLogErrors.csv", true);
-                    sw2.WriteLine("Error: The file PreviousLocations.csv could not be found.");
-                    sw2.Flush();
-                    sw2.Close();
-                    //might need to put in readme that the user will have to search for the file under DailyTravelLogErrors.csv in they wish to view the error log
+                    StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                    swriter2.WriteLine("Error: The file PreviousLocations.csv could not be found.");
+                    swriter2.Flush();
+                    swriter2.Close();
                 }
                 Thread.Sleep(1500);
                 Console.WriteLine();
@@ -105,6 +104,15 @@ namespace The_Daily_Travel_Log
                 MainMenu.Menu();
             }
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
+            {
+                StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.csv");
+                Console.WriteLine(sreader2.ReadToEnd());
+                sreader2.Close();
+                Thread.Sleep(1500);
+                Console.WriteLine();
+                MainMenu.Menu();
+            }
+            else if (menuoption == "6" || menuoption == "6." || menuoption == "6:" || menuoption == "6)" || menuoption == "6 " || menuoption == "6. " || menuoption == "6: " || menuoption == "6) ")
             {
                 Console.WriteLine("Until next time!");
                 Thread.Sleep(1500);
@@ -124,10 +132,10 @@ namespace The_Daily_Travel_Log
                 sw3.Close();*/
 
                 Console.WriteLine("Input not recognized, please try again!");
-                StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
-                sw3.WriteLine("User Input Error: Nonsensical Response");
-                sw3.Flush();
-                sw3.Close();
+                StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                swriter3.WriteLine("User Input Error: Nonsensical Response");
+                swriter3.Flush();
+                swriter3.Close();
 
                 Thread.Sleep(500);
                 Console.WriteLine();
