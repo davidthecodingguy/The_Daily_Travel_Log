@@ -9,7 +9,7 @@ Project Features:
 <br />
 <br />
 #1
-Main menu that allows users to log their location, look at previous locations, and exit the program.
+Main menu that allows users to log their location, look at previous locations, clear the screen, return to the main menu, and exit the program.
 <br />
 Required Feature Addressed: Implement a “master loop” console application where the user can repeatedly enter commands/perform actions, including choosing to exit the program.
 <br />
