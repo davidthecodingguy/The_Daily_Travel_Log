@@ -3,6 +3,8 @@ This is a simple location-logging console application designed to record the com
 <br />
 <br />
 The previously logged locations file can be found by searching your computer's files for PreviousLocations.csv and the error log file can be found by searching for DailyTravelLogErrors.csv, if you wish to view them. *Please note that occasionally the program will save locations and errors to new versions/instances of the files. This does not affect previous location retrieval and it is not necessary to find these files for program functionality.*
+<br />
+<br />
 Project Features:
 <br />
 <br />
