@@ -26,11 +26,15 @@ namespace The_Daily_Travel_Log
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
-                //Keeps saving files to new csv files. Might need a path?
+                //would like to log nonsensical inputs
                 string currenttown;
                 string currentstateorprovince;
                 string currentcountry;
                 string currentdate;
+
+                Console.WriteLine("Please note that anything typed into the following parameters will be saved to your previous locations. This means typos and all!");
+                Console.WriteLine();
+                Thread.Sleep(2000);
 
                 StreamWriter sw1 = new StreamWriter("PreviousLocations.csv", true);
 
@@ -108,6 +112,17 @@ namespace The_Daily_Travel_Log
             }
             else
             {
+                //tyring to record what the user input to cause the error
+                /*string inputerror;
+
+                inputerror = Console.ReadLine();
+
+                StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
+
+                sw3.WriteLine("User input error: " + inputerror);
+                sw3.Flush();
+                sw3.Close();*/
+
                 Console.WriteLine("Input not recognized, please try again!");
                 StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
                 sw3.WriteLine("User Input Error");
