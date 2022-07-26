@@ -30,3 +30,9 @@ Required Feature Addressed: Implement a log that records errors, invalid inputs,
 Tests program functionality via 3 unit tests, to aid in continued program functionality.
 <br />
 Required Feature Addressed: Create 3 or more unit tests for your application.
+<br />
+<br />
+#5 
+Saves location information as input by the user and retrieves previously logged location information and displays said information to the user when requested via the corresponding menu option.
+<br />
+Required Feature Addressed: Read data from an external file, such as text, JSON, CSV, etc and use that data in your application.
