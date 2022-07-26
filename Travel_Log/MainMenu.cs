@@ -112,7 +112,7 @@ namespace The_Daily_Travel_Log
             }
             else
             {
-                //tyring to record what the user input to cause the error
+                //trying to record what the user input to cause the error
                 /*string inputerror;
 
                 inputerror = Console.ReadLine();
@@ -125,7 +125,7 @@ namespace The_Daily_Travel_Log
 
                 Console.WriteLine("Input not recognized, please try again!");
                 StreamWriter sw3 = new StreamWriter("DailyTravelLogErrors.csv", true);
-                sw3.WriteLine("User Input Error");
+                sw3.WriteLine("User Input Error: Nonsensical Response");
                 sw3.Flush();
                 sw3.Close();
 
