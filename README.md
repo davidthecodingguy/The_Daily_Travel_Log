@@ -21,7 +21,7 @@ Required Feature Addressed: Use a LINQ query to retrieve information from a data
 <br />
 <br />
 #3
-Logs invalid user inputs and records them in a text file viewable by the user.
+Logs invalid user inputs on the main menu and file not found errors and records them in a text file viewable by the user.
 <br />
 Required Feature Addressed: Implement a log that records errors, invalid inputs, or other important events and writes them to a text file.
 <br />
