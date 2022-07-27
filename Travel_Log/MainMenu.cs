@@ -92,9 +92,9 @@ namespace The_Daily_Travel_Log
                 catch
                 {
                     Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
-                    StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                    StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
                     DateTime errorDateAndTime = DateTime.Now;
-                    swriter2.WriteLine(errorDateAndTime + " Error: Could not find PreviousLocations.csv");
+                    swriter2.WriteLine(errorDateAndTime + " File Not Found Exception: PreviousLocations.csv");
                     swriter2.Flush();
                     swriter2.Close();
                 }
@@ -122,18 +122,18 @@ namespace The_Daily_Travel_Log
                 //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
                 try
                 {
-                    StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.csv");
+                    StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.txt");
                     Console.WriteLine("You are viewing a list of previously logged errors when attempting to access options in the main menu or the PreviousLocations.csv file:");
                     Console.WriteLine(sreader2.ReadToEnd());
                     sreader2.Close();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
+                //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
                 catch
                 {
-                    Console.WriteLine("The file could not be found! Either make your first mistake or make sure the file DailyTravelLogErrors.csv has not been deleted or renamed!");
-                    StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                    Console.WriteLine("The file could not be found! Either make your first mistake or make sure the file DailyTravelLogError.txt has not been deleted or renamed!");
+                    StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.txt", true);
                     DateTime errorDateAndTime = DateTime.Now;
-                    swriter3.WriteLine(errorDateAndTime + " Error: Could not find DailyTravelLogErrors.csv");
+                    swriter3.WriteLine(errorDateAndTime + " File Not Found Exception: DailyTravelLogErrors.txt");
                     swriter3.Flush();
                     swriter3.Close();
                 }
@@ -150,9 +150,9 @@ namespace The_Daily_Travel_Log
             }
             else
             {
-                //Saves user input errors on the main menu to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
+                //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
                 Console.WriteLine("Input not recognized, please try again!");
-                StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.csv", true);
+                StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.txt", true);
                 DateTime errorDateAndTime = DateTime.Now;
                 swriter4.WriteLine(errorDateAndTime + " Error: User input was not recognized");
                 swriter4.Flush();
