@@ -21,7 +21,7 @@ Saves location information as input by the user, retrieves previously logged loc
 <br />
 <br />
 #3:
-Logs file not found errors and invalid user input occurances (while in the main menu) and writes them to a text file viewable by the user.
+Logs file not found errors and invalid user input occurances (while in the main menu) and writes them to a text file which can be viewed via the corresponding menu option, to aid in debugging.
 <br />
 **Required Feature Addressed:** Implement a log that records errors, invalid inputs, or other important events and writes them to a text file.
 <br />
