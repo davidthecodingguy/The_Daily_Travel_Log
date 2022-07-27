@@ -5,10 +5,15 @@ using System.Linq;
 
 namespace The_Daily_Travel_Log
 {
-    public class GetPreviousLocations
+    public class MenuOptionInputDictionary//GetPreviousLocations
     {
        public static void PreviousLocationsContext()
         {
+            var menuoptioninput = new Dictionary<string, string>()
+            {
+                {"1", "1."}
+            };
+            
               /*public string currenttown { get; set; }
 
               public string currentstateorprovince { get; set; }

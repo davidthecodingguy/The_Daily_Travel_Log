@@ -14,7 +14,9 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("1: Log Location");
             Thread.Sleep(500);
-            Console.WriteLine("2: See Previous Locations");
+            Console.WriteLine("2: See All Previous Locations");
+            Thread.Sleep(500);
+            Console.WriteLine("00: Search Previous Locations");
             Thread.Sleep(500);
             Console.WriteLine("3: Return to Menu");
             Thread.Sleep(500);
@@ -25,8 +27,11 @@ namespace The_Daily_Travel_Log
             Console.WriteLine("6: Quit");
 
             Console.WriteLine();
+            //MenuOptionInputDictionary.PreviousLocationsContext();
+            //Console.ReadKey();
+            //if (menuoptioninput.ContainsKey("1"))
             string menuoption = Console.ReadLine();
-            if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
+            if /*(menuoptioninput)*/ (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             {
                 string currenttown;
                 string currentstateorprovince;
@@ -90,6 +95,10 @@ namespace The_Daily_Travel_Log
                 Thread.Sleep(3000);
                 Console.WriteLine();
                 MainMenu.Menu();
+            }
+            else if (menuoption == "00")
+            {
+
             }
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
             {
