@@ -17,11 +17,11 @@ Main menu that allows users to log their location, look at previous locations, c
 #2:
 Saves location information as input by the user, retrieves previously logged location information, and displays said information to the user when requested via the corresponding menu option.
 <br />
-**Required Feature Addressed:** Read data from an external file, such as text, JSON, CSV, etc and use that data in your application.
+**Required Feature Addressed:** Read data from an external file, such as text, JSON, CSV, etc and use that data in your application. *Please note this feature did not originally appear on the Project Plan.*
 <br />
 <br />
 #3:
-Saves file not found errors and invalid user input occurances (while in the main menu) and writes them to a text file viewable by the user.
+Logs file not found errors and invalid user input occurances (while in the main menu) and writes them to a text file viewable by the user.
 <br />
 **Required Feature Addressed:** Implement a log that records errors, invalid inputs, or other important events and writes them to a text file.
 <br />
