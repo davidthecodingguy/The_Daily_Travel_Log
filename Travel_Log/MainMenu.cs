@@ -30,8 +30,10 @@ namespace The_Daily_Travel_Log
             //MenuOptionInputDictionary.PreviousLocationsContext();
             //Console.ReadKey();
             //if (menuoptioninput.ContainsKey("1"))
+            //This is the start of the "master loop" feature listed in the project README (Feature #1) and each following menu option allows the user to input commands repeatedly.
             string menuoption = Console.ReadLine();
             if /*(menuoptioninput)*/ (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
+            //This menu option saves information input by the user and correlates to the save location/retrieve locations feature (FEATURE #2) listed in the project README
             {
                 string currenttown;
                 string currentstateorprovince;
@@ -43,6 +45,7 @@ namespace The_Daily_Travel_Log
 
                 DateTime currentDateAndTime = DateTime.Now;
 
+                //Saves location information the user inputs to PreviousLocations.csv (Part of Feature #2)
                 StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
 
                 Console.WriteLine("Please input the town you are currently in:");
@@ -57,6 +60,7 @@ namespace The_Daily_Travel_Log
                 currentcountry = Console.ReadLine();
                 Console.WriteLine();
 
+                //Formats the text input by the user for easy legibility (Part of Feature #2)
                 swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " | Town: " + currenttown + " | State/Province: " + currentstateorprovince + " | Country: " + currentcountry);
                 swriter1.Flush();
                 swriter1.Close();
@@ -77,12 +81,14 @@ namespace The_Daily_Travel_Log
                             }
                 var ordered = from c in currenttown orderby c.town descending select c;*/
 
+                //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
                 try
                 {
                     StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
                     Console.WriteLine(sreader1.ReadToEnd());
                     sreader1.Close();
                 }
+                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
                 catch
                 {
                     Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
@@ -113,7 +119,7 @@ namespace The_Daily_Travel_Log
             }
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
             {
-                //This menu option correlates to Feature #3 listed in the project README and has been implemented as a menu option to aid in debugging.
+                //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
                 try
                 {
                     StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.csv");
@@ -121,7 +127,7 @@ namespace The_Daily_Travel_Log
                     Console.WriteLine(sreader2.ReadToEnd());
                     sreader2.Close();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.csv (Part of Feature #3 listed in README)
+                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
                 catch
                 {
                     Console.WriteLine("The file could not be found! Either make your first mistake or make sure the file DailyTravelLogErrors.csv has not been deleted or renamed!");
@@ -136,6 +142,7 @@ namespace The_Daily_Travel_Log
                 MainMenu.Menu();
             }
             else if (menuoption == "6" || menuoption == "6." || menuoption == "6:" || menuoption == "6)" || menuoption == "6 " || menuoption == "6. " || menuoption == "6: " || menuoption == "6) ")
+                //This menu option correlates to the master loop feature (Part of Feature #1) and allows the user to exit the program any time they are in the main menu
             {
                 Console.WriteLine("Happy Trails!");
                 Thread.Sleep(1500);
@@ -143,7 +150,7 @@ namespace The_Daily_Travel_Log
             }
             else
             {
-                //Saves main menu user input errors to DailyTravelLogErrors.csv (Part of Feature #3 listed in README)
+                //Saves user input errors on the main menu to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
                 Console.WriteLine("Input not recognized, please try again!");
                 StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.csv", true);
                 DateTime errorDateAndTime = DateTime.Now;
