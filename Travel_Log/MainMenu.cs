@@ -41,6 +41,8 @@ namespace The_Daily_Travel_Log
                 Console.WriteLine();
                 Thread.Sleep(2000);
 
+                DateTime currentDateAndTime = DateTime.Now;
+
                 StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
 
                 Console.WriteLine("Please input the town you are currently in:");
@@ -55,9 +57,7 @@ namespace The_Daily_Travel_Log
                 currentcountry = Console.ReadLine();
                 Console.WriteLine();
 
-                DateTime currentDateAndTime = DateTime.Now;
-
-                swriter1.WriteLine("Town: " + currenttown + " | State/Province: " + currentstateorprovince + " | Country: " + currentcountry + " | Date: " + currentDateAndTime);
+                swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " | Town: " + currenttown + " | State/Province: " + currentstateorprovince + " | Country: " + currentcountry);
                 swriter1.Flush();
                 swriter1.Close();
 
@@ -98,7 +98,8 @@ namespace The_Daily_Travel_Log
             }
             else if (menuoption == "00")
             {
-
+                SearchPreviousLocations.LinqToSearchPreviousLocations();
+                MainMenu.Menu();
             }
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
             {
