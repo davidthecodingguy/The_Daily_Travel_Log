@@ -3,7 +3,6 @@ using System.IO;
 using System.Threading;
 using NUnit.Compatibility;
 using NUnit.Framework;
-using The_Daily_Travel_Log;
 
 namespace The_Daily_Travel_Log
 {
@@ -14,7 +13,13 @@ namespace The_Daily_Travel_Log
         public void WhenUnableToFindPreviousLocationsFile()
         {
             File.Exists("PreviousLocations.csv");
-            Assert.IsFalse(File.Exists("PreviousLocations.csv"));
+            Assert.IsTrue(File.Exists("PreviousLocations.csv"));
+        }
+        [Test]
+        public void WhenUnableToFindPreviousErrorsFile()
+        {
+            File.Exists("DailyTravelLogErrors.txt");
+            Assert.IsTrue(File.Exists("DailyTravelLogErrors.txt"));
         }
     }
 }
