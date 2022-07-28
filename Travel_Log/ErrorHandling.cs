@@ -2,6 +2,7 @@
 using System.IO;
 using System.Threading;
 using System.Collections.Generic;
+using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     public class ErrorHandling

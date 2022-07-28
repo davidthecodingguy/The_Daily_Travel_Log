@@ -1,7 +1,6 @@
 ﻿using System;
-using System.IO;
-using System.Linq;
 using System.Threading;
+using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {

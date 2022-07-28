@@ -3,6 +3,7 @@ using System.IO;
 using System.Threading;
 using System.Collections.Generic;
 using System.Linq;
+using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
@@ -42,6 +43,7 @@ namespace The_Daily_Travel_Log
             }
 
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
+            //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
             {
                 /* need to add LINQ query. Maybe insert query at beginning
 
@@ -51,8 +53,6 @@ namespace The_Daily_Travel_Log
                                 PreviousTown = Data[1]
                             }
                 var ordered = from c in currenttown orderby c.town descending select c;*/
-
-                //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
                 try
                 {
                     SaveAndRetrieveLocations.RetrievePreviousLocations();
@@ -86,8 +86,8 @@ namespace The_Daily_Travel_Log
             }
 
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
+            //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
             {
-                //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
                 try
                 {
                     ErrorHandling.RetrievePreviousErrors();
@@ -111,8 +111,8 @@ namespace The_Daily_Travel_Log
             }
 
             else
+            //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
             {
-                //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
                 ErrorHandling.UserInputError();
                 Thread.Sleep(1000);
                 Console.WriteLine();
@@ -121,4 +121,3 @@ namespace The_Daily_Travel_Log
         }
     }
 }
-//Thanks Michael Winter for the StreamWriter help!
