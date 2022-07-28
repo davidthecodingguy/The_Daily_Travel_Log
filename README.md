@@ -27,6 +27,6 @@ Logs file not found errors and invalid user input occurances (while in the main 
 <br />
 <br />
 #4:
-Retrieves previously logged location information and displays said information to the user when requested via the corresponding command from the main menu.
+Tests program functionality via 3 unit tests, to ease debugging and aid in continued program functionality.
 <br />
-**Required Feature Addressed:** Use a LINQ query to retrieve information from a data structure (such as a list or array) or file.
+**Required Feature Addressed:** Create 3 or more unit tests for your application.
