@@ -10,14 +10,14 @@ namespace The_Daily_Travel_Log
     {
         public static void Menu()
         {
-            Console.WriteLine("Please type the corresponding number to select an option:");
+            Console.WriteLine("Please type the corresponding number and press enter to select a menu option:");
             Thread.Sleep(500);
-            Console.WriteLine("1: Log Location");
+            Console.WriteLine("1: Log Current Location");
             Thread.Sleep(500);
             Console.WriteLine("2: See All Previous Locations");
             Thread.Sleep(500);
-            Console.WriteLine("00: Search Previous Locations");
-            Thread.Sleep(500);
+            /*Console.WriteLine("00: Search Previous Locations");
+            Thread.Sleep(500);*/
             Console.WriteLine("3: Return to Menu");
             Thread.Sleep(500);
             Console.WriteLine("4: Clear Screen");
@@ -61,7 +61,7 @@ namespace The_Daily_Travel_Log
                 Console.WriteLine();
 
                 //Formats the text input by the user for easy legibility (Part of Feature #2)
-                swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " | Town: " + currenttown + " | State/Province: " + currentstateorprovince + " | Country: " + currentcountry);
+                swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " , Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry);
                 swriter1.Flush();
                 swriter1.Close();
 
@@ -70,6 +70,7 @@ namespace The_Daily_Travel_Log
                 Thread.Sleep(1000);
                 MainMenu.Menu();
             }
+
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
                 /* need to add LINQ query. Maybe insert query at beginning
@@ -84,80 +85,65 @@ namespace The_Daily_Travel_Log
                 //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
                 try
                 {
-                    StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
-                    Console.WriteLine(sreader1.ReadToEnd());
-                    sreader1.Close();
+                    SaveAndRetrieveFileInfo.RetrievePreviousLocations();
                 }
                 //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
-                catch
+                catch (FileNotFoundException)
                 {
-                    Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
-                    StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
-                    DateTime errorDateAndTime = DateTime.Now;
-                    swriter2.WriteLine(errorDateAndTime + " File Not Found Exception: PreviousLocations.csv");
-                    swriter2.Flush();
-                    swriter2.Close();
+                    ErrorHandling.PreviousLocationsRetrievalError();
                 }
                 Thread.Sleep(3000);
                 Console.WriteLine();
                 MainMenu.Menu();
             }
+
             else if (menuoption == "00")
             {
                 SearchPreviousLocations.LinqToSearchPreviousLocations();
                 MainMenu.Menu();
             }
+
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
             {
                 MainMenu.Menu();
             }
+
             else if (menuoption == "4" || menuoption == "4." || menuoption == "4:" || menuoption == "4)" || menuoption == "4 " || menuoption == "4. " || menuoption == "4: " || menuoption == "4) ")
             {
                 Console.Clear();
                 Console.WriteLine("Screen cleared!");
                 MainMenu.Menu();
             }
+
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
             {
                 //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
                 try
                 {
-                    StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.txt");
-                    Console.WriteLine("You are viewing a list of previously logged errors when attempting to access options in the main menu or the PreviousLocations.csv file:");
-                    Console.WriteLine(sreader2.ReadToEnd());
-                    sreader2.Close();
+                    SaveAndRetrieveFileInfo.RetrievePreviousErrors();
                 }
                 //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
-                catch
+                catch (FileNotFoundException) 
                 {
-                    Console.WriteLine("The file could not be found! Either make your first mistake or make sure the file DailyTravelLogError.txt has not been deleted or renamed!");
-                    StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.txt", true);
-                    DateTime errorDateAndTime = DateTime.Now;
-                    swriter3.WriteLine(errorDateAndTime + " File Not Found Exception: DailyTravelLogErrors.txt");
-                    swriter3.Flush();
-                    swriter3.Close();
+                    ErrorHandling.PreviousErrorsRetrievalError();
                 }
                 Thread.Sleep(1500);
                 Console.WriteLine();
                 MainMenu.Menu();
             }
+
             else if (menuoption == "6" || menuoption == "6." || menuoption == "6:" || menuoption == "6)" || menuoption == "6 " || menuoption == "6. " || menuoption == "6: " || menuoption == "6) ")
-                //This menu option correlates to the master loop feature (Part of Feature #1) and allows the user to exit the program any time they are in the main menu
+            //This menu option correlates to the master loop feature (Part of Feature #1) and allows the user to exit the program any time they are in the main menu
             {
                 Console.WriteLine("Happy Trails!");
                 Thread.Sleep(1500);
                 Environment.Exit(0);
             }
+
             else
             {
                 //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
-                Console.WriteLine("Input not recognized, please try again!");
-                StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.txt", true);
-                DateTime errorDateAndTime = DateTime.Now;
-                swriter4.WriteLine(errorDateAndTime + " Error: User input was not recognized");
-                swriter4.Flush();
-                swriter4.Close();
-
+                ErrorHandling.UserInputError();
                 Thread.Sleep(1000);
                 Console.WriteLine();
                 MainMenu.Menu();

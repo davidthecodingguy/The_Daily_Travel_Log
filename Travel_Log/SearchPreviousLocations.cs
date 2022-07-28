@@ -3,26 +3,42 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
+using CsvHelper;
 
 namespace The_Daily_Travel_Log
 {
     class SearchPreviousLocations//MenuOptionInputDictionary
     {
-       public static void LinqToSearchPreviousLocations()
-       {
-            IEnumerable<string> currentDateAndTime = File.ReadLines(@"PreviousLocations.csv");
-            //StreamReader sreader = new StreamReader("PreviousLocations.csv");
+        public static void LinqToSearchPreviousLocations()
+        {
+            using (var sreader = new StreamReader("PreviousLocations.csv"))
+            using (var csv = new CsvReader(sreader, System.Globalization.CultureInfo.InvariantCulture))
+            {
+                var records = csv.GetRecords<dynamic>();
+            }
+        }
 
-            var results = from Date in currentDateAndTime orderby currentDateAndTime ascending
+        /*public class LocationsCsv
+        {
+            public string DateTime { get; set; }
+        }*/
+
+        
+            /*IEnumerable<string> currentDateAndTime = File.ReadLines(@"PreviousLocations.csv");
+            StreamReader sreader = new StreamReader("PreviousLocations.csv");*/
+
+            /*var results = from Date in currentDateAndTime orderby currentDateAndTime ascending
                           where (Date) != null
                           select Date;
             foreach (string Date in currentDateAndTime)
             {
                 Console.WriteLine(Date);
-            }
-            //Console.WriteLine(sreader.ReadToEnd());
-            //sreader.Close();
-                          /*select new
+            }*/
+
+            /*Console.WriteLine(sreader.ReadToEnd());
+            sreader.Close();
+                          select new
                           {
                               currentTown = true(),
                           }*/
@@ -58,4 +74,3 @@ namespace The_Daily_Travel_Log
                 select town;*/
        }
     }
-}
