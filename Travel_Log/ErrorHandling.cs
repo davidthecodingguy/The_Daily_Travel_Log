@@ -35,5 +35,13 @@ namespace The_Daily_Travel_Log
             swriter4.Flush();
             swriter4.Close();
         }
+
+        public static void RetrievePreviousErrors()
+        {
+            StreamReader sreader2 = new StreamReader("DailyTravelLogErrors.txt");
+            Console.WriteLine("You are viewing a list of previously logged errors when attempting to access program files or options in the main menu:");
+            Console.WriteLine(sreader2.ReadToEnd());
+            sreader2.Close();
+        }
     }
 }

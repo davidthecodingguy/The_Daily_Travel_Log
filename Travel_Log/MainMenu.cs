@@ -35,37 +35,7 @@ namespace The_Daily_Travel_Log
             if /*(menuoptioninput)*/ (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             //This menu option saves information input by the user and correlates to the save location/retrieve locations feature (FEATURE #2) listed in the project README
             {
-                string currenttown;
-                string currentstateorprovince;
-                string currentcountry;
-
-                Console.WriteLine("Please note that anything typed into the following parameters will be saved to your previous locations. This means typos and all!");
-                Console.WriteLine();
-                Thread.Sleep(2000);
-
-                DateTime currentDateAndTime = DateTime.Now;
-
-                //Saves location information the user inputs to PreviousLocations.csv (Part of Feature #2)
-                StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
-
-                Console.WriteLine("Please input the town you are currently in:");
-                currenttown = Console.ReadLine();
-                Console.WriteLine();
-
-                Console.WriteLine("Please input the state or province you are currently in:");
-                currentstateorprovince = Console.ReadLine();
-                Console.WriteLine();
-
-                Console.WriteLine("Please input the country you are currently in:");
-                currentcountry = Console.ReadLine();
-                Console.WriteLine();
-
-                //Formats the text input by the user for easy legibility (Part of Feature #2)
-                swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " , Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry);
-                swriter1.Flush();
-                swriter1.Close();
-
-                Console.WriteLine("Your location information has been recorded!");
+                SaveAndRetrieveLocations.SaveLocation();
                 Console.WriteLine();
                 Thread.Sleep(1000);
                 MainMenu.Menu();
@@ -85,7 +55,7 @@ namespace The_Daily_Travel_Log
                 //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
                 try
                 {
-                    SaveAndRetrieveFileInfo.RetrievePreviousLocations();
+                    SaveAndRetrieveLocations.RetrievePreviousLocations();
                 }
                 //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
                 catch (FileNotFoundException)
@@ -120,7 +90,7 @@ namespace The_Daily_Travel_Log
                 //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
                 try
                 {
-                    SaveAndRetrieveFileInfo.RetrievePreviousErrors();
+                    ErrorHandling.RetrievePreviousErrors();
                 }
                 //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
                 catch (FileNotFoundException) 
