@@ -17,8 +17,6 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("2: See All Previous Locations");
             Thread.Sleep(500);
-            /*Console.WriteLine("00: Search Previous Locations");
-            Thread.Sleep(500);*/
             Console.WriteLine("3: Return to Menu");
             Thread.Sleep(500);
             Console.WriteLine("4: Clear Screen");
@@ -27,13 +25,10 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("6: Quit");
 
+            //This is the start of the "master loop" feature listed in the project README (Feature #1) and each following menu option allows the user to input commands repeatedly
             Console.WriteLine();
-            //MenuOptionInputDictionary.PreviousLocationsContext();
-            //Console.ReadKey();
-            //if (menuoptioninput.ContainsKey("1"))
-            //This is the start of the "master loop" feature listed in the project README (Feature #1) and each following menu option allows the user to input commands repeatedly.
             string menuoption = Console.ReadLine();
-            if /*(menuoptioninput)*/ (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
+            if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
             //This menu option saves information input by the user and correlates to the save location/retrieve locations feature (FEATURE #2) listed in the project README
             {
                 SaveAndRetrieveLocations.SaveLocation();
@@ -45,14 +40,6 @@ namespace The_Daily_Travel_Log
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
             {
-                /* need to add LINQ query. Maybe insert query at beginning
-
-                var query = from line in File.ReadLines("PreviousLocations.csv")
-                            select new
-                            {
-                                PreviousTown = Data[1]
-                            }
-                var ordered = from c in currenttown orderby c.town descending select c;*/
                 try
                 {
                     SaveAndRetrieveLocations.RetrievePreviousLocations();
@@ -64,12 +51,6 @@ namespace The_Daily_Travel_Log
                 }
                 Thread.Sleep(3000);
                 Console.WriteLine();
-                MainMenu.Menu();
-            }
-
-            else if (menuoption == "00")
-            {
-                SearchPreviousLocations.LinqToSearchPreviousLocations();
                 MainMenu.Menu();
             }
 
