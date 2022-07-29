@@ -36,7 +36,7 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
 
             //Formats the text input by the user for easy legibility (Part of Feature #2)
-            swriter1.WriteLine("Date and Time Logged: " + currentDateAndTime + " , Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry);
+            swriter1.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry + " , Date and Time Logged: " + currentDateAndTime);
             swriter1.Flush();
             swriter1.Close();
 

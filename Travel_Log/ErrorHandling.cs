@@ -12,7 +12,7 @@ namespace The_Daily_Travel_Log
             Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
             StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
             DateTime errorDateAndTime = DateTime.Now;
-            swriter2.WriteLine(errorDateAndTime + " Exception: File 'PreviousLocations.csv' was not found");
+            swriter2.WriteLine(errorDateAndTime + " File Not Found Exception: PreviousLocations.csv");
             swriter2.Flush();
             swriter2.Close();
         }
