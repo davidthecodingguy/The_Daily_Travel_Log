@@ -20,7 +20,7 @@ namespace The_Daily_Travel_Log
 
             DateTime currentDateAndTime = DateTime.Now;
 
-            //Saves location information the user inputs to PreviousLocations.csv (Part of Feature #2)
+            //Saves location information the user inputs to PreviousLocations.csv
             StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
 
             Console.WriteLine("Please input the town you are currently in:");
@@ -35,7 +35,7 @@ namespace The_Daily_Travel_Log
             currentcountry = Console.ReadLine();
             Console.WriteLine();
 
-            //Formats the text input by the user for easy legibility (Part of Feature #2)
+            //Formats the text input by the user for easy legibility
             swriter1.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry + " , Date and Time Logged: " + currentDateAndTime);
             swriter1.Flush();
             swriter1.Close();

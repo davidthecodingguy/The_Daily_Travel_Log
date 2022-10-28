@@ -25,11 +25,9 @@ namespace The_Daily_Travel_Log
             Thread.Sleep(500);
             Console.WriteLine("6: Quit");
 
-            //This is the start of the "master loop" feature listed in the project README (Feature #1) and each following menu option allows the user to input commands repeatedly
             Console.WriteLine();
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
-            //This menu option saves information input by the user and correlates to the save location/retrieve locations feature (FEATURE #2) listed in the project README
             {
                 SaveAndRetrieveLocations.SaveLocation();
                 Console.WriteLine();
@@ -38,13 +36,12 @@ namespace The_Daily_Travel_Log
             }
 
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
-            //This menu option retrieves information previously input by the user correlates to the save location/retrieve locations feature (Feature #2) listed in the project README
             {
                 try
                 {
                     SaveAndRetrieveLocations.RetrievePreviousLocations();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #3)
+                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
                 catch (FileNotFoundException)
                 {
                     ErrorHandling.PreviousLocationsRetrievalError();
@@ -67,13 +64,13 @@ namespace The_Daily_Travel_Log
             }
 
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
-            //This menu option correlates to the error logging feature (Feature #3) listed in the project README and has been implemented as a menu option to aid in debugging
+            //This menu option correlates to the error logging feature (Feature #2) listed in the project README and has been implemented as a menu option to aid in debugging
             {
                 try
                 {
                     ErrorHandling.RetrievePreviousErrors();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
+                //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
                 catch (FileNotFoundException) 
                 {
                     ErrorHandling.PreviousErrorsRetrievalError();
@@ -84,7 +81,6 @@ namespace The_Daily_Travel_Log
             }
 
             else if (menuoption == "6" || menuoption == "6." || menuoption == "6:" || menuoption == "6)" || menuoption == "6 " || menuoption == "6. " || menuoption == "6: " || menuoption == "6) ")
-            //This menu option correlates to the master loop feature (Part of Feature #1) and allows the user to exit the program any time they are in the main menu
             {
                 Console.WriteLine("Happy Trails!");
                 Thread.Sleep(1500);
@@ -92,7 +88,7 @@ namespace The_Daily_Travel_Log
             }
 
             else
-            //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #3)
+            //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
             {
                 ErrorHandling.UserInputError();
                 Thread.Sleep(1000);
