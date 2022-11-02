@@ -29,6 +29,7 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureWriteToCsvFile()
         {
+            //replace first 4 lines of code with a call to SaveAndRetrieveLocations, then delete the File.Delete call
             StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.csv");
             teststreamWriter.WriteLine("Test");
             teststreamWriter.Flush();
@@ -43,6 +44,7 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureWriteToTxtFile()
         {
+            //replace first 4 lines of code with a call to ErrorHandling, then delete the File.Delete call
             StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.txt");
             teststreamWriter.WriteLine("Test");
             teststreamWriter.Flush();
@@ -57,6 +59,7 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureReadCsvFile()
         {
+            //replace first 4 lines of code with a call to SaveAndRetrieveLocations, then delete the File.Delete call
             StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.csv");
             teststreamWriter.WriteLine("Test");
             teststreamWriter.Flush();
@@ -75,6 +78,7 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureReadTxtFile()
         {
+            //replace first 4 lines of code with a call to ErrorHandling, then delete the File.Delete call
             StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.txt");
             teststreamWriter.WriteLine("Test");
             teststreamWriter.Flush();
