@@ -4,6 +4,7 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
+    //The Program class has the single responsibility of introducing the program menu and follows the Single Responsibility Principle (Part of Feature #3)
     public class Program
     {
         public static void Main(string[] args)

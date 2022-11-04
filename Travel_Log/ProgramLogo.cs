@@ -3,6 +3,7 @@ using System.Drawing;
 using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
+    //The ProgramLogo class has the single responsibility of menu logo display and follows the Single Responsibility Principle (Part of Feature #3)
     public class ProgramLogo
     {
         public static void WriteLogo()

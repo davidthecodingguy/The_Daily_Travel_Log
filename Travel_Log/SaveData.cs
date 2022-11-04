@@ -6,7 +6,8 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
-    public class SaveAndRetrieveLocations
+    ////The SaveData class has the single responsibility of saving data and follows the Single Responsibility Principle (Part of Feature #3)
+    public class SaveData
     {
         public static void SaveLocation()
         {
@@ -43,13 +44,32 @@ namespace The_Daily_Travel_Log
             Console.WriteLine("Your location information has been recorded!");
         }
 
-        public static void RetrievePreviousLocations()
+        public static void SavePreviousLocationsRetrievalError()
         {
-            StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
-            Console.WriteLine(sreader1.ReadToEnd());
-            sreader1.Close();
+            StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
+            DateTime errorDateAndTime = DateTime.Now;
+            swriter2.WriteLine(errorDateAndTime + " File Not Found Exception: PreviousLocations.csv");
+            swriter2.Flush();
+            swriter2.Close();
         }
 
+        public static void SavePreviousErrorsRetrievalError()
+        {
+            StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.txt", true);
+            DateTime errorDateAndTime = DateTime.Now;
+            swriter3.WriteLine(errorDateAndTime + " File Not Found Exception: DailyTravelLogErrors.txt");
+            swriter3.Flush();
+            swriter3.Close();
+        }
+
+        public static void SaveUserInputError()
+        {
+            StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.txt", true);
+            DateTime errorDateAndTime = DateTime.Now;
+            swriter4.WriteLine(errorDateAndTime + " Error: User input was not recognized");
+            swriter4.Flush();
+            swriter4.Close();
+        }
     }
 }
 //Thanks Michael Winter for the StreamWriter help!

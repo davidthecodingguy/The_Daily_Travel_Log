@@ -6,6 +6,7 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
+    // NEED TO MOVE RETRIEVAL TESTS TO SEPARATE TEST CLASS The class has the single responsibility of error display and follows the Single Responsibility Principle (Part of Feature #3)
     [TestFixture]
     public class SaveAndRetrieveDataTests
     //These unit tests correlate to the unit tests feature listed on the project README (Feature #1) and have been implemented to aid in debugging and ensure the program continues to function as intended
@@ -29,7 +30,7 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureWriteToCsvFile()
         {
-            SaveAndRetrieveLocations.SaveLocation();
+            SaveData.SaveLocation();
             Assert.IsNotEmpty(File.ReadAllText("PreviousLocations.csv"));
         }
         //Tests to ensure the program is writing to a txt file stored on the computer, like is done in the error logging feature, without having to run the program or check the computer's memory manually (Part of Feature #1)
@@ -43,23 +44,23 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureReadCsvFile()
         {
-            SaveAndRetrieveLocations.RetrievePreviousLocations();
-            StreamReader teststreamReader = new StreamReader("PreviousLocations.csv");
+            RetrieveData.RetrievePreviousLocations();
+            //StreamReader teststreamReader = new StreamReader("PreviousLocations.csv");
             Assert.IsNotEmpty(File.ReadLines("PreviousLocations.csv"));
-            Console.WriteLine(teststreamReader.ReadLine());
-            Assert.IsNotEmpty(teststreamReader.ReadLine());
-            teststreamReader.Close();
+            //Console.WriteLine(teststreamReader.ReadLine());
+            //Assert.IsNotEmpty(teststreamReader.ReadLine());
+            //teststreamReader.Close();
         }
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]
         public void EnsureReadTxtFile()
         {
-            ErrorHandling.RetrievePreviousErrors();
-            StreamReader teststreamReader = new StreamReader("DailyTravelLogErrors.txt");
+            RetrieveData.RetrievePreviousErrors();
+            //StreamReader teststreamReader = new StreamReader("DailyTravelLogErrors.txt");
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
-            Console.WriteLine(teststreamReader.ReadLine());
-            Assert.IsNotEmpty(teststreamReader.ReadLine());
-            teststreamReader.Close();
+            //Console.WriteLine(teststreamReader.ReadLine());
+            //Assert.IsNotEmpty(teststreamReader.ReadLine());
+            //teststreamReader.Close();
         }
         
     }
