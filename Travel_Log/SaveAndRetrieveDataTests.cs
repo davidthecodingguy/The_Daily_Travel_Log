@@ -54,7 +54,6 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureReadTxtFile()
         {
-            //replace first 4 lines of code with a call to ErrorHandling, then delete the File.Delete call
             ErrorHandling.RetrievePreviousErrors();
             StreamReader teststreamReader = new StreamReader("DailyTravelLogErrors.txt");
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
