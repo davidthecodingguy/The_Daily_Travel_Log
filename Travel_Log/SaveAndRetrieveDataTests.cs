@@ -43,38 +43,24 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureReadCsvFile()
         {
-            //replace first 4 lines of code with a call to SaveAndRetrieveLocations, then delete the File.Delete call
-            StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.csv");
-            teststreamWriter.WriteLine("Test");
-            teststreamWriter.Flush();
-            teststreamWriter.Close();
-            StreamReader teststreamReader = new StreamReader("ProgramTestFile.csv");
-            Assert.IsNotEmpty(File.ReadLines("ProgramTestFile.csv"));
+            SaveAndRetrieveLocations.RetrievePreviousLocations();
+            StreamReader teststreamReader = new StreamReader("PreviousLocations.csv");
+            Assert.IsNotEmpty(File.ReadLines("PreviousLocations.csv"));
             Console.WriteLine(teststreamReader.ReadLine());
             Assert.IsNotEmpty(teststreamReader.ReadLine());
             teststreamReader.Close();
-            //Deletes file to ensure future test accuracy
-            File.Delete("ProgramTestFile.csv");
-            //Verifies if file has been deleted
-            Assert.IsFalse(File.Exists("ProgramTestFile.csv"));
         }
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]
         public void EnsureReadTxtFile()
         {
             //replace first 4 lines of code with a call to ErrorHandling, then delete the File.Delete call
-            StreamWriter teststreamWriter = new StreamWriter("ProgramTestFile.txt");
-            teststreamWriter.WriteLine("Test");
-            teststreamWriter.Flush();
-            teststreamWriter.Close();
-            StreamReader teststreamReader = new StreamReader("ProgramTestFile.txt");
+            ErrorHandling.RetrievePreviousErrors();
+            StreamReader teststreamReader = new StreamReader("DailyTravelLogErrors.txt");
+            Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
             Console.WriteLine(teststreamReader.ReadLine());
             Assert.IsNotEmpty(teststreamReader.ReadLine());
             teststreamReader.Close();
-            //Deletes file to ensure future test accuracy
-            File.Delete("ProgramTestFile.txt");
-            //Verifies if file has been deleted
-            Assert.IsFalse(File.Exists("ProgramTestFile.txt"));
         }
         
     }
