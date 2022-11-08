@@ -8,6 +8,7 @@ using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     //The MainMenu class has the single responsibility of menu option display functionality and follows the Single Responsibility Principle (Part of Feature #3)
+    //The MainMenu class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
     public class MainMenu
     {
         public static void Menu()
@@ -42,7 +43,7 @@ namespace The_Daily_Travel_Log
                 {
                     RetrieveData.RetrievePreviousLocations();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
+                //Displays error warnings and saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
                 catch (FileNotFoundException)
                 {
                     ErrorHandling.PreviousLocationsRetrievalError();
@@ -71,7 +72,7 @@ namespace The_Daily_Travel_Log
                 {
                     RetrieveData.RetrievePreviousErrors();
                 }
-                //Saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
+                //Displays error warnings and saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
                 catch (FileNotFoundException) 
                 {
                     ErrorHandling.PreviousErrorsRetrievalError();
@@ -89,7 +90,7 @@ namespace The_Daily_Travel_Log
             }
 
             else
-            //Saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
+            //Displays error warnings and saves user input errors on the main menu to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
             {
                 ErrorHandling.UserInputError();
                 Thread.Sleep(1000);

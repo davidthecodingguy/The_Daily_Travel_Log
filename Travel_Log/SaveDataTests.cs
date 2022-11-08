@@ -7,6 +7,7 @@ using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     //The SaveDataTests class has the single responsibility of testing file/data saving and follows the Single Responsibility Principle (Part of Feature #3)
+    //The SaveDataTests class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
     [TestFixture]
     public class SaveDataTests
     //These unit tests correlate to the unit tests feature listed on the project README (Feature #1) and have been implemented to aid in debugging and ensure the program continues to function as intended

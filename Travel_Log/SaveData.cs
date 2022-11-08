@@ -6,7 +6,8 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
-    ////The SaveData class has the single responsibility of saving data and follows the Single Responsibility Principle (Part of Feature #3)
+    //The SaveData class has the single responsibility of saving data and follows the Single Responsibility Principle (Part of Feature #3)
+    //The SaveData class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
     public class SaveData
     {
         public static void SaveLocation()
@@ -43,7 +44,7 @@ namespace The_Daily_Travel_Log
 
             Console.WriteLine("Your location information has been recorded!");
         }
-
+        //This method saves file not found errors to a user accessible text file when attempting to access previously saved locations (Part of Feature #2)
         public static void SavePreviousLocationsRetrievalError()
         {
             StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
@@ -52,7 +53,7 @@ namespace The_Daily_Travel_Log
             swriter2.Flush();
             swriter2.Close();
         }
-
+        //This method saves file not found errors to a user accessible text file when attempting to access previously saved errors (Part of Feature #2)
         public static void SavePreviousErrorsRetrievalError()
         {
             StreamWriter swriter3 = new StreamWriter("DailyTravelLogErrors.txt", true);
@@ -61,7 +62,7 @@ namespace The_Daily_Travel_Log
             swriter3.Flush();
             swriter3.Close();
         }
-
+        //This method saves main menu user input errors to a user accessible text file (Part of Feature #2)
         public static void SaveUserInputError()
         {
             StreamWriter swriter4 = new StreamWriter("DailyTravelLogErrors.txt", true);
