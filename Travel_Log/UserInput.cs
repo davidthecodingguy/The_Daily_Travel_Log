@@ -7,26 +7,11 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
-    //The MainMenu class has the single responsibility of menu option display functionality and follows the Single Responsibility Principle (Part of Feature #3)
-    //The MainMenu class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
-    public class MainMenu
+    //The UserInput class has the single responsibility of managing user input and follows the Single Responsibility Principle (Part of Feature #3)
+    public class UserInput
     {
-        public static void Menu()
+        public static void MainMenuInput()
         {
-            Console.WriteLine("Please type the corresponding number and press enter to select a menu option:");
-            Thread.Sleep(500);
-            Console.WriteLine("1: Log Current Location");
-            Thread.Sleep(500);
-            Console.WriteLine("2: See All Previous Locations");
-            Thread.Sleep(500);
-            Console.WriteLine("3: Return to Menu");
-            Thread.Sleep(500);
-            Console.WriteLine("4: Clear Screen");
-            Thread.Sleep(500);
-            Console.WriteLine("5: View Error Log (Nerds Only)");
-            Thread.Sleep(500);
-            Console.WriteLine("6: Quit");
-
             Console.WriteLine();
             string menuoption = Console.ReadLine();
             if (menuoption == "1" || menuoption == "1." || menuoption == "1:" || menuoption == "1)" || menuoption == "1 " || menuoption == "1. " || menuoption == "1: " || menuoption == "1) ")
@@ -34,7 +19,7 @@ namespace The_Daily_Travel_Log
                 SaveData.SaveLocation();
                 Console.WriteLine();
                 Thread.Sleep(1000);
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
 
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
@@ -50,19 +35,19 @@ namespace The_Daily_Travel_Log
                 }
                 Thread.Sleep(3000);
                 Console.WriteLine();
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
 
             else if (menuoption == "3" || menuoption == "3." || menuoption == "3:" || menuoption == "3)" || menuoption == "3 " || menuoption == "3. " || menuoption == "3: " || menuoption == "3) ")
             {
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
 
             else if (menuoption == "4" || menuoption == "4." || menuoption == "4:" || menuoption == "4)" || menuoption == "4 " || menuoption == "4. " || menuoption == "4: " || menuoption == "4) ")
             {
                 Console.Clear();
                 Console.WriteLine("Screen cleared!");
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
 
             else if (menuoption == "5" || menuoption == "5." || menuoption == "5:" || menuoption == "5)" || menuoption == "5 " || menuoption == "5. " || menuoption == "5: " || menuoption == "5) ")
@@ -73,13 +58,13 @@ namespace The_Daily_Travel_Log
                     RetrieveData.RetrievePreviousErrors();
                 }
                 //Displays error warnings and saves file not found errors to DailyTravelLogErrors.txt for later retrieval (Part of Feature #2)
-                catch (FileNotFoundException) 
+                catch (FileNotFoundException)
                 {
                     ErrorHandling.PreviousErrorsRetrievalError();
                 }
                 Thread.Sleep(1500);
                 Console.WriteLine();
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
 
             else if (menuoption == "6" || menuoption == "6." || menuoption == "6:" || menuoption == "6)" || menuoption == "6 " || menuoption == "6. " || menuoption == "6: " || menuoption == "6) ")
@@ -95,8 +80,9 @@ namespace The_Daily_Travel_Log
                 ErrorHandling.UserInputError();
                 Thread.Sleep(1000);
                 Console.WriteLine();
-                MainMenu.Menu();
+                DisplayMenus.MainMenu();
             }
         }
     }
 }
+
