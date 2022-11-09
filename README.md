@@ -21,9 +21,12 @@ Logs runtime errors and invalid inputs and records them in a database or file vi
 <br />
 <br />
 #3:
-The program will follow the Single Responsibility Principle and the (NOT ADDED YET) for ease of development and maintenance. The MainMenu, ErrorHandling, ProgramStart, RetreiveData, SaveData, ProgramLogo, RetrieveDataTests, and SaveDataTests all follow the Single Responsibility Principle. Comments detailing each class's use of these principles can be found in comments in the respective class files. 
+The program will follow the Single Responsibility Principle and the Open/Closed Principle for ease of development and maintenance. The MainMenu, ErrorHandling, ProgramStart, RetreiveData, SaveData, ProgramLogo, RetrieveDataTests, and SaveDataTests all follow the Single Responsibility Principle. The RetrieveDataTests, SaveDataTests, and ErrorHandling classes all follow the Open/Closed Principle. Comments detailing each class's use of these principles can be found in comments in the respective class files. 
 <br />
 **Required Feature Addressed:** Add comments to your code explaining how you are using at least 2 of the SOLID Principles.
+<br />
+<br />
+**Unimplemented Features:**
 <br />
 <br />
 #4:
