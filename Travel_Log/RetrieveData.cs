@@ -7,7 +7,6 @@ using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     //The RetrieveData class has the single responsibility of data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
-    //The RetriveData class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
     public class RetrieveData
     {
         public static void RetrievePreviousLocations()

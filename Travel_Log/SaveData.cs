@@ -7,7 +7,6 @@ using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     //The SaveData class has the single responsibility of saving data and follows the Single Responsibility Principle (Part of Feature #3)
-    //The SaveData class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
     public class SaveData
     {
         public static void SaveLocation()

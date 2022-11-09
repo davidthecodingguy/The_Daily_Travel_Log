@@ -7,7 +7,9 @@ using NUnit.Framework;
 namespace The_Daily_Travel_Log
 {
     //The RetrieveDataTests class has the single responsibility of testing data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
-    //The RetrieveDataTests class can be added to as new requirements arise, but should not be modified as it is functionally sound. This class follows the Open/Closed Principle (Part of Feature 3)
+
+    //The EnsureReadCsvFile and EnsureReadTextFile methods can be be extended as new requirements arise without changing the overall function of RetrieveDataTests parent class.
+    //This class follows the Open/Closed Principle (Part of Feature #3)
     [TestFixture]
     public class RetrieveDataTests
     //These unit tests correlate to the unit tests feature listed on the project README (Feature #1) and have been implemented to aid in debugging and ensure the program continues to function as intended
@@ -17,22 +19,14 @@ namespace The_Daily_Travel_Log
         public void EnsureReadCsvFile()
         {
             RetrieveData.RetrievePreviousLocations();
-            //StreamReader teststreamReader = new StreamReader("PreviousLocations.csv");
             Assert.IsNotEmpty(File.ReadLines("PreviousLocations.csv"));
-            //Console.WriteLine(teststreamReader.ReadLine());
-            //Assert.IsNotEmpty(teststreamReader.ReadLine());
-            //teststreamReader.Close();
         }
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]
         public void EnsureReadTxtFile()
         {
             RetrieveData.RetrievePreviousErrors();
-            //StreamReader teststreamReader = new StreamReader("DailyTravelLogErrors.txt");
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
-            //Console.WriteLine(teststreamReader.ReadLine());
-            //Assert.IsNotEmpty(teststreamReader.ReadLine());
-            //teststreamReader.Close();
         }
     }
 }
