@@ -3,7 +3,7 @@ using System.IO;
 using System.Threading;
 using NUnit.Compatibility;
 using NUnit.Framework;
-//ALL UNNECESSARY CODE NEEDS TO BE DELETED
+
 namespace The_Daily_Travel_Log
 {
     //The RetrieveDataTests class has the single responsibility of testing data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
