@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Threading;
 using NUnit.Framework;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore;
 
 namespace The_Daily_Travel_Log
 {

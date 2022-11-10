@@ -3,6 +3,8 @@ using System.IO;
 using System.Threading;
 using System.Collections.Generic;
 using NUnit.Framework;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore;
 
 namespace The_Daily_Travel_Log
 {

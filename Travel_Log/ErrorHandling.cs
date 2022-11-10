@@ -3,6 +3,9 @@ using System.IO;
 using System.Threading;
 using System.Collections.Generic;
 using NUnit.Framework;
+using Microsoft.EntityFrameworkCore.Sqlite;
+using Microsoft.EntityFrameworkCore;
+
 namespace The_Daily_Travel_Log
 {
     //The ErrorHandling class has the single responsibility of error display and follows the Single Responsibility Principle (Part of Feature #3)
