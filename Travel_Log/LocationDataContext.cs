@@ -7,24 +7,23 @@ using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
 namespace The_Daily_Travel_Log
 {
-    //I'll probably need to put references to this in SaveData
+    //I'll probably need to put references to this in SaveData. But I don't know how to do that
     public class LocationDataContext : DbContext
 	{
 		public DbSet<Locations> Locations { get; set; }
 
 		public string DbPath { get; set; }
-
+		//I initialized the db but I don't see any other files when I look at files in Travel_Log folder
 		public LocationDataContext()
 		{
 			var folder = Environment.SpecialFolder.LocalApplicationData;
 			var path = Environment.GetFolderPath(folder);
 			DbPath = System.IO.Path.Join(path, "locations.db");
 		}
-
+		//Will this or the above code create a path to the db or will I need to do that some other way?
 		protected override void OnConfiguring(DbContextOptionsBuilder options) =>
 			options.UseSqlite($"Data Source={DbPath}");
 	}
-    //How do I make sure info goes where I want it? Maybe look at Microsoft notes?
     public class Locations
 	{
 		public int LocationId { get; set; }
