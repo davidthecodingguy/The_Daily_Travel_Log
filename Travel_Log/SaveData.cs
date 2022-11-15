@@ -6,6 +6,8 @@ using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections;
+using System.Timers;
 
 namespace The_Daily_Travel_Log
 {
@@ -22,10 +24,9 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
             Thread.Sleep(2000);
 
-            DateTime currentDateAndTime = DateTime.Now;
+            DateTime currentDateAndTime =DateTime.Now;
 
-            //Saves location information the user inputs to PreviousLocations.csv
-            StreamWriter swriter1 = new StreamWriter("PreviousLocations.csv", true);
+            using var db = new LocationDataContext();
 
             Console.WriteLine("Please input the town you are currently in:");
             currenttown = Console.ReadLine();
@@ -39,10 +40,11 @@ namespace The_Daily_Travel_Log
             currentcountry = Console.ReadLine();
             Console.WriteLine();
 
-            //Formats the text input by the user for easy legibility
-            swriter1.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + " , Country: " + currentcountry + " , Date and Time Logged: " + currentDateAndTime);
-            swriter1.Flush();
-            swriter1.Close();
+            //Saves location information the user inputs to locations.db
+            Console.WriteLine("Town: " + currenttown +" , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
+            db.Add(new Locations());
+            //EXCEPTION IS THROWN WHEN DB TRIES TO SAVE INPUT SAYS PRI<ARY KEY MUST BE DEFINED
+            db.SaveChanges();
 
             Console.WriteLine("Your location information has been recorded!");
         }

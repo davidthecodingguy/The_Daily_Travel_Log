@@ -5,6 +5,7 @@ using NUnit.Compatibility;
 using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using System.Linq;
 
 namespace The_Daily_Travel_Log
 {
@@ -13,9 +14,14 @@ namespace The_Daily_Travel_Log
     {
         public static void RetrievePreviousLocations()
         {
-            StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
-            Console.WriteLine(sreader1.ReadToEnd());
-            sreader1.Close();
+            //DOES NOT WORK DUE TO SAVE ERROR SEE SAVEDATA CLASS
+            //Possibly need to put in .OrderBy?
+            using var db = new LocationDataContext();
+            db.Locations
+                .First();
+            //StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
+            //Console.WriteLine(sreader1.ReadToEnd());
+            //sreader1.Close();
         }
         //Retrieves main menu errors that have been written to a text file (Part of Feature #2)
         public static void RetrievePreviousErrors()
