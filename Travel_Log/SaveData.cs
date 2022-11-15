@@ -24,7 +24,7 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
             Thread.Sleep(2000);
 
-            DateTime currentDateAndTime =DateTime.Now;
+            DateTime currentDateAndTime = DateTime.Now;
 
             using var db = new LocationDataContext();
 
@@ -41,9 +41,9 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
 
             //Saves location information the user inputs to locations.db
-            Console.WriteLine("Town: " + currenttown +" , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
-            db.Add(new Locations());
-            //EXCEPTION IS THROWN WHEN DB TRIES TO SAVE INPUT SAYS PRI<ARY KEY MUST BE DEFINED
+            Console.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
+            db.Add(new Locations {PreviousLocationId});
+            //EXCEPTION IS THROWN WHEN DB TRIES TO SAVE INPUT SAYS PRIMARY KEY MUST BE DEFINED
             db.SaveChanges();
 
             Console.WriteLine("Your location information has been recorded!");

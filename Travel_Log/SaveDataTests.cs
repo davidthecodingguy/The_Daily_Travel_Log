@@ -19,6 +19,7 @@ namespace The_Daily_Travel_Log
         //The EnsurePreviousLocationsFileExists method's behavior can be extended as new requirements arise without changing it's source code and follows the Open/Closed Principle (Part of Feature #3)
         public void EnsurePreviousLocationsFileExists()
         {
+            //How do I build the same test but for a database?
             File.Exists("PreviousLocations.csv");
             Assert.IsTrue(File.Exists("PreviousLocations.csv"));
         }

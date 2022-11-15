@@ -5,9 +5,9 @@ using System.Collections.Generic;
 using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
+
 namespace The_Daily_Travel_Log
 {
-    //I'll probably need to put references to this in SaveData. But I don't know how to do that
     public class LocationDataContext : DbContext
 	{
 		public DbSet<Locations> Locations { get; set; }
@@ -26,8 +26,8 @@ namespace The_Daily_Travel_Log
 	}
     public class Locations
 	{
-		public string PreviousLocation { get; set; }
-		//public int PreviousLocationId { get; set; }
+        public int PreviousLocationId { get; set; }
+        public string PreviousLocation { get; set; }
 		//public string CurrentTown { get; set; }
 		//public string CurrentStateOrProvince { get; set; }
 		//public string CurrentCountry { get; set; }
