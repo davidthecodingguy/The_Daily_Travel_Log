@@ -26,7 +26,7 @@ namespace The_Daily_Travel_Log
 	}
     public class Locations
 	{
-        public int PreviousLocationId { get; set; }
+        public int PreviousLocationId { get; internal set; }
         public string PreviousLocation { get; set; }
 		//public string CurrentTown { get; set; }
 		//public string CurrentStateOrProvince { get; set; }
