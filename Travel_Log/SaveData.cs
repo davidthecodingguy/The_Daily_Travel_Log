@@ -42,7 +42,13 @@ namespace The_Daily_Travel_Log
 
             //Saves location information the user inputs to the database
             Console.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
-            db.Add(new Locations {PreviousLocationId});
+            var loc = new Location();
+            loc.CurrentTown = currenttown;
+            loc.CurrentStateOrProvince = currentstateorprovince;
+            loc.CurrentCountry = currentcountry;
+            loc.CurrentDateAndTime = currentDateAndTime;
+
+            db.Locations.Add(loc);
             //EXCEPTION IS THROWN WHEN DB TRIES TO SAVE INPUT SAYING PRIMARY KEY MUST BE DEFINED
             db.SaveChanges();
 

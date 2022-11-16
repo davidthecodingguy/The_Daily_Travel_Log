@@ -10,7 +10,7 @@ namespace The_Daily_Travel_Log
 {
     public class LocationDataContext : DbContext
 	{
-		public DbSet<Locations> Locations { get; set; }
+		public DbSet<Location> Locations { get; set; }
 
 		public string DbPath { get; set; }
 		//I initialized the db but I don't see any other files when I look at files in Travel_Log folder
@@ -24,14 +24,18 @@ namespace The_Daily_Travel_Log
 		protected override void OnConfiguring(DbContextOptionsBuilder options) =>
 			options.UseSqlite($"Data Source={DbPath}");
 	}
-    public class Locations
+    public class Location
 	{
-        public int PreviousLocationId { get; internal set; }
-        public string PreviousLocation { get; set; }
-		//public string CurrentTown { get; set; }
-		//public string CurrentStateOrProvince { get; set; }
-		//public string CurrentCountry { get; set; }
-		//public string CurrentDateAndTime { get; set; }
+
+        int Id { get; set; }
+
+		public string CurrentTown { get; set; }
+
+		public string CurrentStateOrProvince { get; set; }
+
+		public string CurrentCountry { get; set; }
+
+		public DateTime CurrentDateAndTime { get; set; }
 	}
 }
 //Thanks Doug Sutherland for the database help!
