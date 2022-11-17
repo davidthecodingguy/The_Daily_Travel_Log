@@ -25,9 +25,10 @@ namespace The_Daily_Travel_Log
 
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
-                //Displays previous locations information in a user friendly format 
+                //Displays previous locations information in a user friendly format
                 try
                 {
+                    //Values from the list are used for previous location display (Part of Feature #3) 
                     var locations = RetrieveData.RetrievePreviousLocations();
                     foreach (var location in locations)
                     {

@@ -14,7 +14,7 @@ namespace The_Daily_Travel_Log
     {
         public static List<Location> RetrievePreviousLocations()
         {
-            //This dictionary/list has been created to separate concerns of retrieving and saving data to allow easier implementation in multiple locations (Part of Feature #3)
+            //This list has been created to separate concerns of retrieving and saving data and to allow easier implementation in multiple locations (Part of Feature #3)
             using var db = new LocationDataContext();
             List<Location> locations = db.Locations.ToList();
             return locations;
