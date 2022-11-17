@@ -30,14 +30,14 @@ namespace The_Daily_Travel_Log
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
         }
 
-        //TEST TYPE #3: Tests to ensure the program is acquiring previous locations information from the correct source (Part of Feature #1)
+        //TEST TYPE #3: Tests to ensure the list in RetrieveData.RetrievePreviousLocations is acquiring previous locations information from the database (Part of Feature #1)
         [Test]
         public void EnsureFunctionPullsFromDb()
         {
             RetrieveData.RetrievePreviousLocations();
             using var db = new LocationDataContext();
             List<Location> locations = db.Locations.ToList();
-            Assert.IsInstanceOf<List<Location>>(db.Locations.ToList());
+            Assert.IsInstanceOf<List<Location>>(locations);
         }
     }
 }

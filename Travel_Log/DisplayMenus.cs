@@ -7,7 +7,6 @@ using NUnit.Framework;
 
 namespace The_Daily_Travel_Log
 {
-    //The DisplayMenus class has the single responsibility of menu option display functionality and follows the Single Responsibility Principle (Part of Feature #3)
     public class DisplayMenus
     {
         public static void MainMenu()
