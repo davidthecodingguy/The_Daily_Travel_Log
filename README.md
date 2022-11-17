@@ -5,7 +5,7 @@ This is a simple location-logging console application designed to record the use
 The error log file can be found by searching for DailyTravelLogErrors.txt within your computer's memory, if you wish to view it outside of the program. *Please note that occasionally the program will save errors to new versions/instances of the file. This does not affect previous error retrieval and it is not necessary to find this text file for program functionality.*
 <br />
 <br />
-**Project Features:**
+<u>**Project Features:**
 <br />
 <br />
 #1:
