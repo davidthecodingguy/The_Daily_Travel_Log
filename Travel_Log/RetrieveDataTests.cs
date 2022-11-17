@@ -32,7 +32,7 @@ namespace The_Daily_Travel_Log
 
         //TEST TYPE #3: Tests to ensure the program is acquiring previous locations information from the correct source (Part of Feature #1)
         [Test]
-        public void EnsureFunctionFunctions()
+        public void EnsureFunctionPullsFromDb()
         {
             RetrieveData.RetrievePreviousLocations();
             using var db = new LocationDataContext();
