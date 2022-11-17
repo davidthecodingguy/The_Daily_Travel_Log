@@ -9,7 +9,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace The_Daily_Travel_Log
 {
-    //The UserInput class has the single responsibility of managing user input and follows the Single Responsibility Principle (Part of Feature #3)
     public class UserInput
     {
         public static void MainMenuInput()

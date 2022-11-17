@@ -10,7 +10,6 @@ using System.Collections.Generic;
 
 namespace The_Daily_Travel_Log
 {
-    //The RetrieveData class has the single responsibility of data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
     public class RetrieveData
     {
         public static List<Location> RetrievePreviousLocations()

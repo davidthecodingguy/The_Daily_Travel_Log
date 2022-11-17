@@ -6,7 +6,6 @@ using Microsoft.EntityFrameworkCore;
 
 namespace The_Daily_Travel_Log
 {
-    //The ProgramStart class has the single responsibility of introducing the program's main menu and follows the Single Responsibility Principle (Part of Feature #3)
     public class ProgramStart
     {
         public static void Main(string[] args)

@@ -20,7 +20,7 @@ namespace The_Daily_Travel_Log
 			var path = Environment.GetFolderPath(folder);
 			DbPath = System.IO.Path.Join(path, "locations.db");
 		}
-		//Will this or the above code create a path to the db or will I need to do that some other way?
+
 		protected override void OnConfiguring(DbContextOptionsBuilder options) =>
 			options.UseSqlite($"Data Source={DbPath}");
 	}

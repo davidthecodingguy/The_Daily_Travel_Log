@@ -8,26 +8,29 @@ using Microsoft.EntityFrameworkCore;
 
 namespace The_Daily_Travel_Log
 {
-    //The RetrieveDataTests class has the single responsibility of testing data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
     [TestFixture]
     public class RetrieveDataTests
     //These unit tests correlate to the unit tests feature listed on the project README (Feature #1) and have been implemented to aid in debugging and ensure the program continues to function as intended
     {
-        //TEST TYPE #3: Tests to ensure the program is reading from the correct csv file stored on the computer, like is done in the previous locations display feature (Part of Feature #1)
+        //TEST TYPE #2: Tests to ensure the program is reading from the database, like is done in the previous locations display feature (Part of Feature #1)
         [Test]
-        //The EnsureReadCsvFile method's behavior can be extended as new requirements arise without changing it's source code and follows the Open/Closed Principle (Part of Feature #3)
         public void EnsureReadLocationsDatabase()
         {
-            var  locations = RetrieveData.RetrievePreviousLocations();
+            var locations = RetrieveData.RetrievePreviousLocations();
             Assert.IsNotEmpty(locations);
         }
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]
-        //The EnsureReadTxtFile method's behavior can be extended as new requirements arise without changing it's source code and follows the Open/Closed Principle (Part of Feature #3)
         public void EnsureReadTxtFile()
         {
             RetrieveData.RetrievePreviousErrors();
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
+        }
+        [Test]
+        //ADD TEST TESTING FUNCTION IN RETRIEVEDATA
+        public void EnsureFunctionFunctions()
+        {
+
         }
     }
 }
