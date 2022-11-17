@@ -25,6 +25,7 @@ namespace The_Daily_Travel_Log
 
             else if (menuoption == "2" || menuoption == "2." || menuoption == "2:" || menuoption == "2)" || menuoption == "2 " || menuoption == "2. " || menuoption == "2: " || menuoption == "2) ")
             {
+                //Displays previous locations information in a user friendly format 
                 try
                 {
                     var locations = RetrieveData.RetrievePreviousLocations();

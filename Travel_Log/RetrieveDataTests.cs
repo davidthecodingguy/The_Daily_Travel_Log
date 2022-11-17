@@ -5,6 +5,8 @@ using NUnit.Compatibility;
 using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace The_Daily_Travel_Log
 {
@@ -19,6 +21,7 @@ namespace The_Daily_Travel_Log
             var locations = RetrieveData.RetrievePreviousLocations();
             Assert.IsNotEmpty(locations);
         }
+
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]
         public void EnsureReadTxtFile()
@@ -26,11 +29,15 @@ namespace The_Daily_Travel_Log
             RetrieveData.RetrievePreviousErrors();
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
         }
+
+        //TEST TYPE #3: Tests to ensure the program is acquiring previous locations information from the correct source (Part of Feature #1)
         [Test]
-        //ADD TEST TESTING FUNCTION IN RETRIEVEDATA
         public void EnsureFunctionFunctions()
         {
-
+            RetrieveData.RetrievePreviousLocations();
+            using var db = new LocationDataContext();
+            List<Location> locations = db.Locations.ToList();
+            Assert.IsInstanceOf<List<Location>>(db.Locations.ToList());
         }
     }
 }

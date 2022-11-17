@@ -55,7 +55,7 @@ namespace The_Daily_Travel_Log
         {
             StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
             DateTime errorDateAndTime = DateTime.Now;
-            swriter2.WriteLine(errorDateAndTime + " The Database Could Not be Reached: PreviousLocations.csv");
+            swriter2.WriteLine(errorDateAndTime + " Error: The Database Could Not be Reached");
             swriter2.Flush();
             swriter2.Close();
         }

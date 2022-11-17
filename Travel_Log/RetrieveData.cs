@@ -15,7 +15,6 @@ namespace The_Daily_Travel_Log
         public static List<Location> RetrievePreviousLocations()
         {
             //DICTIONARY/LIST
-            //FUNCTION THAT I NEED TO TEST FOR THE 3RD UNIT TEST
             using var db = new LocationDataContext();
             List<Location> locations = db.Locations.ToList();
             return locations;
