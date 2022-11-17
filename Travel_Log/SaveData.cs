@@ -40,26 +40,22 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
 
             //Saves location information the user inputs to the database
-            //MAKE SURE TO MOVE CONSOLEWRITELINE TO MENU OPTION 2
-            Console.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
             var loc = new Location();
             loc.CurrentTown = currenttown;
             loc.CurrentStateOrProvince = currentstateorprovince;
             loc.CurrentCountry = currentcountry;
             loc.CurrentDateAndTime = currentDateAndTime;
-
             db.Locations.Add(loc);
-
             db.SaveChanges();
 
             Console.WriteLine("Your location information has been recorded!");
         }
-        //This method saves file not found errors to a user accessible text file when attempting to access previously saved locations (Part of Feature #2)
+        //This method saves issues reaching the database to a user accessible text file when attempting to access previously saved locations (Part of Feature #2)
         public static void SavePreviousLocationsRetrievalError()
         {
             StreamWriter swriter2 = new StreamWriter("DailyTravelLogErrors.txt", true);
             DateTime errorDateAndTime = DateTime.Now;
-            swriter2.WriteLine(errorDateAndTime + " File Not Found Exception: PreviousLocations.csv");
+            swriter2.WriteLine(errorDateAndTime + " The Database Could Not be Reached: PreviousLocations.csv");
             swriter2.Flush();
             swriter2.Close();
         }

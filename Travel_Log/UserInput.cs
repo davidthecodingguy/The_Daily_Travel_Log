@@ -30,11 +30,11 @@ namespace The_Daily_Travel_Log
                     var locations = RetrieveData.RetrievePreviousLocations();
                     foreach (var location in locations)
                     {
-                        Console.WriteLine(location.CurrentCountry);
+                        Console.WriteLine(location.CurrentDateAndTime + " Town: " + location.CurrentTown + " State/Province: " + location.CurrentStateOrProvince + " Country: " + location.CurrentCountry);
                     }
                 }
-                //Displays error warnings and saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
-                catch (FileNotFoundException)
+                //Displays error warnings and saves issues reaching the database to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
+                catch
                 {
                     ErrorHandling.PreviousLocationsRetrievalError();
                 }

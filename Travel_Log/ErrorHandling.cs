@@ -12,7 +12,7 @@ namespace The_Daily_Travel_Log
     {
         public static void PreviousLocationsRetrievalError()
         {
-            Console.WriteLine("The file could not be found! Either make your first location entry or make sure the file PreviousLocations.csv has not been deleted or renamed!");
+            Console.WriteLine("The database could not be reached! Please make your first location entry!");
             SaveData.SavePreviousLocationsRetrievalError();
         }
         public static void PreviousErrorsRetrievalError()
