@@ -13,7 +13,7 @@ namespace The_Daily_Travel_Log
 		public DbSet<Location> Locations { get; set; }
 
 		public string DbPath { get; set; }
-		//I initialized the db but I don't see any other files when I look at files in Travel_Log folder
+
 		public LocationDataContext()
 		{
 			var folder = Environment.SpecialFolder.LocalApplicationData;
@@ -27,7 +27,7 @@ namespace The_Daily_Travel_Log
     public class Location
 	{
 
-        int Id { get; set; }
+        public int Id { get; set; }
 
 		public string CurrentTown { get; set; }
 

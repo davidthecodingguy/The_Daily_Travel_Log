@@ -6,22 +6,20 @@ using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace The_Daily_Travel_Log
 {
     //The RetrieveData class has the single responsibility of data retrieval and follows the Single Responsibility Principle (Part of Feature #3)
     public class RetrieveData
     {
-        public static void RetrievePreviousLocations()
+        public static List<Location> RetrievePreviousLocations()
         {
-            //DOES NOT WORK DUE TO SAVE ERROR SEE SAVEDATA CLASS
-            //Possibly need to put in .OrderBy?
+            //DICTIONARY/LIST
+            //FUNCTION THAT I NEED TO TEST FOR THE 3RD UNIT TEST
             using var db = new LocationDataContext();
-            db.Locations
-                .First();
-            //StreamReader sreader1 = new StreamReader("PreviousLocations.csv");
-            //Console.WriteLine(sreader1.ReadToEnd());
-            //sreader1.Close();
+            List<Location> locations = db.Locations.ToList();
+            return locations;
         }
         //Retrieves main menu errors that have been written to a text file (Part of Feature #2)
         public static void RetrievePreviousErrors()

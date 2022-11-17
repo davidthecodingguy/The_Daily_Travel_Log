@@ -28,7 +28,11 @@ namespace The_Daily_Travel_Log
             {
                 try
                 {
-                    RetrieveData.RetrievePreviousLocations();
+                    var locations = RetrieveData.RetrievePreviousLocations();
+                    foreach (var location in locations)
+                    {
+                        Console.WriteLine(location.CurrentCountry);
+                    }
                 }
                 //Displays error warnings and saves file not found errors to DailyTravelLogErrors.csv for later retrieval (Part of Feature #2)
                 catch (FileNotFoundException)

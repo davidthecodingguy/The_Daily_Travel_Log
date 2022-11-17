@@ -16,10 +16,10 @@ namespace The_Daily_Travel_Log
         //TEST TYPE #3: Tests to ensure the program is reading from the correct csv file stored on the computer, like is done in the previous locations display feature (Part of Feature #1)
         [Test]
         //The EnsureReadCsvFile method's behavior can be extended as new requirements arise without changing it's source code and follows the Open/Closed Principle (Part of Feature #3)
-        public void EnsureReadCsvFile()
+        public void EnsureReadLocationsDatabase()
         {
-            RetrieveData.RetrievePreviousLocations();
-            Assert.IsNotEmpty(File.ReadLines("PreviousLocations.csv"));
+            var  locations = RetrieveData.RetrievePreviousLocations();
+            Assert.IsNotEmpty(locations);
         }
         //Tests to ensure the program is reading from the correct txt file stored on the computer, like is done in the previous errors display feature (Part of Feature #1)
         [Test]

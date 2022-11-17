@@ -41,6 +41,7 @@ namespace The_Daily_Travel_Log
             Console.WriteLine();
 
             //Saves location information the user inputs to the database
+            //MAKE SURE TO MOVE MOVE THIS LINE TO MENU OPTION 2
             Console.WriteLine("Town: " + currenttown + " , State/Province: " + currentstateorprovince + ", Country: " + currentcountry + ", Date and Time Logged: " + currentDateAndTime);
             var loc = new Location();
             loc.CurrentTown = currenttown;
