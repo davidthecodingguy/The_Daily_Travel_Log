@@ -26,7 +26,6 @@ namespace The_Daily_Travel_Log
 	}
     public class Location
 	{
-
         public int Id { get; set; }
 
 		public string CurrentTown { get; set; }

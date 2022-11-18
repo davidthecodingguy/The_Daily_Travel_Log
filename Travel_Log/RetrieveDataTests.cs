@@ -6,6 +6,7 @@ using NUnit.Framework;
 using Microsoft.EntityFrameworkCore.Sqlite;
 using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
+using System.Collections;
 using System.Linq;
 
 namespace The_Daily_Travel_Log
@@ -34,10 +35,10 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureFunctionPullsFromDb()
         {
-            RetrieveData.RetrievePreviousLocations();
-            using var db = new LocationDataContext();
-            List<Location> locations = db.Locations.ToList();
-            Assert.IsInstanceOf<List<Location>>(locations);
+            SaveData.SaveLocation();
+            var locations = new Location();
+            //foreach (var location in locations)
+            Assert.Equals("1",locations.Id);
         }
     }
 }

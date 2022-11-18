@@ -12,9 +12,9 @@ namespace The_Daily_Travel_Log
 {
     public class RetrieveData
     {
+        //This list has been created to separate concerns of retrieving and saving data and to allow easier implementation of this class in multiple locations (Part of Feature #3)
         public static List<Location> RetrievePreviousLocations()
         {
-            //This list has been created to separate concerns of retrieving and saving data and to allow easier implementation of this class in multiple locations (Part of Feature #3)
             using var db = new LocationDataContext();
             List<Location> locations = db.Locations.ToList();
             return locations;
