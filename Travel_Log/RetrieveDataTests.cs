@@ -38,7 +38,7 @@ namespace The_Daily_Travel_Log
             SaveData.SaveLocation();
             var locations = new Location();
             //foreach (var location in locations)
-            Assert.Equals("1",locations.Id);
+            Assert.AreEqual("Town:", locations.CurrentTown);
         }
     }
 }
