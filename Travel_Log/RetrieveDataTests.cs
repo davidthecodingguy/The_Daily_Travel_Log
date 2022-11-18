@@ -31,16 +31,12 @@ namespace The_Daily_Travel_Log
             Assert.IsNotEmpty(File.ReadLines("DailyTravelLogErrors.txt"));
         }
 
-        //TEST TYPE #3: Tests to ensure the list in RetrieveData.RetrievePreviousLocations is acquiring previous locations information from the database (Part of Feature #1)
+        //TEST TYPE #3: Tests to ensure the value being saved to the database is the same as that input to the database. The value input is 0, as is the default when no location information is passed (Part of Feature #1)
         [Test]
         public void EnsureFunctionPullsFromDb()
         {
-            //SaveData.SaveLocation();
-            RetrieveData.RetrievePreviousLocations();
+            SaveData.SaveLocation();
             var location = new Location();
-            //foreach (var location in locations)
-            //using var db = new LocationDataContext();
-            //List<Location> locations = db.Locations.ToList();
             Assert.AreEqual( 0, location.Id);
         }
     }

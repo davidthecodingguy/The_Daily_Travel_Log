@@ -15,7 +15,6 @@ namespace The_Daily_Travel_Log
     {
         public static void SaveLocation()
         {
-            //string currenttownheader;
             string currenttown;
             string currentstateorprovince;
             string currentcountry;
@@ -29,7 +28,6 @@ namespace The_Daily_Travel_Log
             using var db = new LocationDataContext();
 
             Console.WriteLine("Please input the town you are currently in:");
-            // currenttownheader = Console.WriteLine(); 
             currenttown = Console.ReadLine();
             Console.WriteLine();
 
@@ -43,7 +41,6 @@ namespace The_Daily_Travel_Log
 
             //Saves location information the user inputs to the database
             var loc = new Location();
-            //loc.CurrentTown = currenttownheader;
             loc.CurrentDateAndTime = currentDateAndTime;
             loc.CurrentTown = currenttown;
             loc.CurrentStateOrProvince = currentstateorprovince;
