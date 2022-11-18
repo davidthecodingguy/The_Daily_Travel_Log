@@ -35,10 +35,13 @@ namespace The_Daily_Travel_Log
         [Test]
         public void EnsureFunctionPullsFromDb()
         {
-            SaveData.SaveLocation();
-            var locations = new Location();
+            //SaveData.SaveLocation();
+            RetrieveData.RetrievePreviousLocations();
+            var location = new Location();
             //foreach (var location in locations)
-            Assert.AreEqual("Town:", locations.CurrentTown);
+            //using var db = new LocationDataContext();
+            //List<Location> locations = db.Locations.ToList();
+            Assert.AreEqual( 0, location.Id);
         }
     }
 }
